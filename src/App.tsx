@@ -2,7 +2,6 @@ import React from "react";
 import { AnnouncementBanner } from "./components/AnnouncementBanner";
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
-import { ClientsSection } from "./components/ClientsSection";
 import { FeaturesGeneral } from "./components/FeaturesGeneral";
 import { FeaturesNavs } from "./components/FeaturesNavs";
 import { CalculatorSection } from "./components/CalculatorSection";
@@ -14,8 +13,8 @@ import { FooterSection } from "./components/FooterSection";
 
 export function App() {
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 selection:bg-blue-600 selection:text-white font-sans antialiased relative">
-      {/* Floating Top Navigation directly overlaid on top of 3D Scene */}
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-600 selection:text-white font-sans antialiased relative">
+      {/* Floating Top Navigation */}
       <div className="fixed top-0 inset-x-0 z-50 pointer-events-none">
         <div className="pointer-events-auto">
           <AnnouncementBanner />
@@ -26,11 +25,8 @@ export function App() {
       </div>
 
       <main className="overflow-hidden">
-        {/* ScrewFast Hero with 3D Model Scene spanning 100% full screen height starting from pixel 0 */}
+        {/* ScrewFast Hero (includes Banking Partners Marquee) */}
         <HeroSection />
-
-        {/* Clients & Banking Ecosystem Partners */}
-        <ClientsSection />
 
         {/* Features General with IconBlocks */}
         <FeaturesGeneral />

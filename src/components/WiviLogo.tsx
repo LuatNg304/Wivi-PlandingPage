@@ -15,7 +15,6 @@ export const WiviLogo: React.FC<WiviLogoProps> = ({ size = 36, className = '' })
         borderRadius: size * 0.26, 
         position: 'relative',
         overflow: 'hidden',
-        boxShadow: '0 4px 16px rgba(37, 99, 235, 0.45)',
         flexShrink: 0
       }}
     >

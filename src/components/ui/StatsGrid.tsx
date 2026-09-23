@@ -13,14 +13,14 @@ export const StatsGrid: React.FC<StatsGridProps> = ({
   index,
 }) => {
   return (
-    <li className="-m-0.5 flex flex-col p-6 sm:p-8">
-      <div className="mb-2 flex items-end gap-x-2 text-3xl font-bold text-neutral-800 sm:text-5xl dark:text-neutral-200">
+    <li className="-m-0.5 flex flex-col p-3.5 sm:p-6 md:p-8">
+      <div className="mb-1 sm:mb-2 flex items-end gap-x-1 sm:gap-x-2 text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-none">
         {(index === 1 || index === 2) && (
-          <ArrowUp className="size-6 text-sky-400 dark:text-sky-300 stroke-[2.5]" />
+          <ArrowUp className="size-4 sm:size-6 text-blue-600 stroke-[2.5]" />
         )}
         {count}
       </div>
-      <p className="text-sm text-neutral-600 sm:text-base dark:text-neutral-400">
+      <p className="text-xs sm:text-sm lg:text-base text-slate-600 leading-snug sm:leading-normal mt-1">
         {description}
       </p>
     </li>

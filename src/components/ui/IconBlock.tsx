@@ -14,15 +14,15 @@ export const IconBlock: React.FC<IconBlockProps> = ({
   return (
     <div className="flex gap-x-5">
       {icon && (
-        <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-neutral-800 text-sky-400 dark:bg-neutral-800/90 dark:text-sky-300 border border-neutral-700/60 shadow-xs">
+        <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 border border-blue-100">
           {icon}
         </div>
       )}
       <div className="grow">
-        <h3 className="text-balance text-lg font-bold text-neutral-800 dark:text-neutral-200">
+        <h3 className="text-balance text-lg font-bold text-slate-900">
           {heading}
         </h3>
-        <p className="mt-1 text-pretty text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+        <p className="mt-1 text-pretty text-slate-600 text-sm leading-relaxed">
           {content}
         </p>
       </div>
