@@ -54,16 +54,7 @@ const partners: Partner[] = [
     category: "Nông Nghiệp & PTNT",
     logo: "/banks/agribank.png",
   },
-  {
-    name: "MoMo",
-    category: "Ví Điện Tử Siêu Ứng Dụng",
-    logo: "/banks/momo.png",
-  },
-  {
-    name: "Viettel Money",
-    category: "Hệ Sinh Thái Tài Chính Số",
-    logo: "/banks/viettelmoney.png",
-  },
+  
 ];
 
 export const ClientsSection: React.FC = () => {

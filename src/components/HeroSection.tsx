@@ -47,9 +47,9 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Review Component (Stacked Avatars & 4.9 Star Rating) */}
-            <div className="w-full">
+            {/* <div className="w-full">
               <ReviewComponent />
-            </div>
+            </div> */}
           </div>
 
           {/* Right Column: 3D Showcase Frame – hidden on mobile, shown lg+ */}

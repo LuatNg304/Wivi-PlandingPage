@@ -5,22 +5,22 @@ import { Quote } from "lucide-react";
 export const TestimonialsSection: React.FC = () => {
   const stats = [
     {
-      count: "50k+",
-      description: "Người dùng duy trì chuỗi kỷ luật liên tục trên 30 ngày",
+      count: "Mỗi ngày",
+      description: "Theo dõi chi tiêu và giữ thói quen tiết kiệm đều đặn hơn",
     },
     {
-      count: "35%",
+      count: "Tự động",
       description:
-        "Tỷ lệ tăng trưởng trung bình quỹ tiết kiệm sau 3 tháng sử dụng",
+        "AI phân loại giao dịch và gợi ý cách chia hũ theo nhu cầu thực tế",
     },
     {
-      count: "2 Giây",
-      description: "Thời gian AI OCR bóc tách và ghi nhận 1 hoá đơn thanh toán",
+      count: "1 App",
+      description: "Quản lý chi tiêu, tiết kiệm và mục tiêu tài chính trong một nơi",
     },
     {
-      count: "4.9★",
+      count: "Linh hoạt",
       description:
-        "Đánh giá hài lòng trên kho ứng dụng Apple Store & Google Play",
+        "Tùy chỉnh chiến lược tài chính theo phong cách sống và mục tiêu cá nhân",
     },
   ];
 

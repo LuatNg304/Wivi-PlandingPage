@@ -32,7 +32,7 @@ export const ReviewComponent: React.FC<ReviewComponentProps> = ({
               ))}
               <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 ring-2 ring-white">
                 <span className="text-[10px] leading-none font-bold text-white uppercase">
-                  45k+
+                  
                 </span>
               </span>
             </div>
