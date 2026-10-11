@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: "Inter", "Inter Tight", system-ui, -apple-system, sans-serif;
+  --font-serif: "Lora", Georgia, Cambria, serif;
   --color-transparent: transparent;
   --color-current: currentColor;
   --color-black: #000;
