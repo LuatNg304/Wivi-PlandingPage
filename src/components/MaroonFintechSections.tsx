@@ -300,71 +300,71 @@ export const MaroonPricingSection: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="pricing" className="relative py-20 sm:py-28 px-4 sm:px-6 max-w-6xl mx-auto">
+    <section ref={sectionRef} id="pricing" className="relative py-14 sm:py-28 px-4 sm:px-6 max-w-6xl mx-auto">
       {/* Background Ambient Glow */}
       <div
-        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-sky-500/10 rounded-full blur-3xl pointer-events-none -z-10 transition-opacity duration-1000 ${
+        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[250px] sm:h-[350px] bg-sky-500/10 rounded-full blur-3xl pointer-events-none -z-10 transition-opacity duration-1000 ${
           isVisible ? "opacity-100 animate-pulse" : "opacity-0"
         }`}
       />
 
       {/* Header with Scroll Reveal */}
       <div
-        className={`text-center max-w-2xl mx-auto mb-12 transition-all duration-700 ease-out ${
+        className={`text-center max-w-2xl mx-auto mb-10 sm:mb-12 transition-all duration-700 ease-out ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--mfl-cream)] leading-tight">
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--mfl-cream)] leading-tight">
           Đầu tư một cốc cà phê, <br />
           <span className="italic font-serif text-[var(--mfl-glow)]">tiết kiệm hàng triệu đồng</span>
         </h2>
-        <p className="mt-3 text-sm sm:text-base text-slate-400 leading-relaxed">
+        <p className="mt-2 sm:mt-3 text-xs sm:text-base text-slate-400 leading-relaxed px-2">
           Chi phí minh bạch theo tháng. Không phí ẩn. Hủy bất cứ lúc nào chỉ với một chạm.
         </p>
       </div>
 
       {/* Cards Grid with Staggered Scroll Reveal */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch pt-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-8 items-stretch pt-2 sm:pt-4">
         {plans.map((p, idx) => {
           const delays = ["delay-100", "delay-250", "delay-400"];
           return (
             <div
               key={p.id}
-              className={`group relative rounded-3xl transition-all duration-700 ease-out flex flex-col justify-between ${
+              className={`group relative rounded-2xl sm:rounded-3xl transition-all duration-700 ease-out flex flex-col justify-between ${
                 isVisible ? `opacity-100 translate-y-0 ${delays[idx]}` : "opacity-0 translate-y-12"
               } ${
               p.highlight
                 ? "p-[2px] bg-gradient-to-b from-sky-400 via-sky-500 to-cyan-600 shadow-2xl shadow-sky-950/70 lg:-translate-y-3 hover:-translate-y-5"
-                : "border border-white/10 bg-[#07162c]/90 hover:border-sky-400/40 hover:-translate-y-2 p-6 sm:p-8"
+                : "border border-white/10 bg-[#07162c]/90 hover:border-sky-400/40 hover:-translate-y-2 p-5 sm:p-8"
             }`}
           >
             {p.highlight ? (
-              <div className="w-full h-full rounded-[22px] bg-[#07162c] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+              <div className="w-full h-full rounded-[14px] sm:rounded-[22px] bg-[#07162c] p-5 sm:p-8 flex flex-col justify-between relative overflow-hidden">
                 {/* Glowing Corner Badge */}
-                <div className="absolute top-0 right-0 px-4 py-1.5 rounded-bl-2xl bg-gradient-to-r from-sky-500 to-cyan-400 text-slate-950 text-[11px] font-extrabold uppercase tracking-wider shadow-md">
+                <div className="absolute top-0 right-0 px-3 sm:px-4 py-1 sm:py-1.5 rounded-bl-xl sm:rounded-bl-2xl bg-gradient-to-r from-sky-500 to-cyan-400 text-slate-950 text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider shadow-md">
                   Khuyên Dùng ★
                 </div>
 
                 <div>
-                  <div className="flex justify-between items-start mb-4">
+                  <div className="flex justify-between items-start mb-3 sm:mb-4">
                     <div>
-                      <h3 className="text-xl font-bold text-white group-hover:text-sky-300 transition-colors">
+                      <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-sky-300 transition-colors">
                         {p.name}
                       </h3>
                       <p className="text-xs text-slate-400 mt-1">{p.desc}</p>
                     </div>
                   </div>
 
-                  <div className="my-6">
+                  <div className="my-4 sm:my-6">
                     <div className="flex items-baseline gap-2">
-                      <span className="text-4xl font-extrabold text-white tracking-tight">
+                      <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
                         {p.price}
                       </span>
                       <span className="text-xs text-slate-400">/ {p.period}</span>
                     </div>
                   </div>
 
-                  <ul className="space-y-3 pt-6 border-t border-sky-400/20 text-xs sm:text-sm text-slate-200">
+                  <ul className="space-y-2.5 sm:space-y-3 pt-5 sm:pt-6 border-t border-sky-400/20 text-xs sm:text-sm text-slate-200">
                     {p.features.map((feat, fIdx) => (
                       <li key={fIdx} className="flex items-start gap-2.5 group/item">
                         <Check className="size-4 shrink-0 mt-0.5 text-sky-400 group-hover/item:scale-110 transition-transform" />
@@ -376,7 +376,7 @@ export const MaroonPricingSection: React.FC = () => {
 
                 <a
                   href="#download"
-                  className={`mt-8 w-full py-3.5 rounded-xl text-center text-xs sm:text-sm font-bold transition-all duration-300 block cursor-pointer group-hover:scale-[1.02] active:scale-[0.98] ${p.btnClass}`}
+                  className={`mt-6 sm:mt-8 w-full py-3 sm:py-3.5 rounded-xl text-center text-xs sm:text-sm font-bold transition-all duration-300 block cursor-pointer group-hover:scale-[1.02] active:scale-[0.98] ${p.btnClass}`}
                 >
                   {p.btnText}
                 </a>
@@ -384,25 +384,25 @@ export const MaroonPricingSection: React.FC = () => {
             ) : (
               <>
                 <div>
-                  <div className="flex justify-between items-start mb-4">
+                  <div className="flex justify-between items-start mb-3 sm:mb-4">
                     <div>
-                      <h3 className="text-xl font-bold text-[var(--mfl-cream)] group-hover:text-sky-300 transition-colors">
+                      <h3 className="text-lg sm:text-xl font-bold text-[var(--mfl-cream)] group-hover:text-sky-300 transition-colors">
                         {p.name}
                       </h3>
                       <p className="text-xs text-slate-400 mt-1">{p.desc}</p>
                     </div>
                   </div>
 
-                  <div className="my-6">
+                  <div className="my-4 sm:my-6">
                     <div className="flex items-baseline gap-2">
-                      <span className="text-4xl font-extrabold text-[var(--mfl-cream)] tracking-tight">
+                      <span className="text-3xl sm:text-4xl font-extrabold text-[var(--mfl-cream)] tracking-tight">
                         {p.price}
                       </span>
                       <span className="text-xs text-slate-400">/ {p.period}</span>
                     </div>
                   </div>
 
-                  <ul className="space-y-3 pt-6 border-t border-white/10 text-xs sm:text-sm text-[var(--mfl-cream)]">
+                  <ul className="space-y-2.5 sm:space-y-3 pt-5 sm:pt-6 border-t border-white/10 text-xs sm:text-sm text-[var(--mfl-cream)]">
                     {p.features.map((feat, fIdx) => (
                       <li key={fIdx} className="flex items-start gap-2.5 group/item">
                         <Check className="size-4 shrink-0 mt-0.5 text-sky-400 group-hover/item:scale-110 transition-transform" />
@@ -416,7 +416,7 @@ export const MaroonPricingSection: React.FC = () => {
 
                 <a
                   href="#download"
-                  className={`mt-8 w-full py-3.5 rounded-xl text-center text-xs sm:text-sm font-bold transition-all duration-300 block cursor-pointer group-hover:scale-[1.02] active:scale-[0.98] ${p.btnClass}`}
+                  className={`mt-6 sm:mt-8 w-full py-3 sm:py-3.5 rounded-xl text-center text-xs sm:text-sm font-bold transition-all duration-300 block cursor-pointer group-hover:scale-[1.02] active:scale-[0.98] ${p.btnClass}`}
                   style={{
                     color: idx === 2 ? "#091726" : undefined,
                   }}
@@ -477,23 +477,23 @@ export const MaroonFaqSection: React.FC = () => {
   const filteredFaqs = category === "all" ? allFaqs : allFaqs.filter((f) => f.cat === category);
 
   return (
-    <section ref={sectionRef} id="faq" className="relative py-20 sm:py-28 px-4 sm:px-6 max-w-4xl mx-auto">
+    <section ref={sectionRef} id="faq" className="relative py-14 sm:py-28 px-4 sm:px-6 max-w-4xl mx-auto">
       {/* Header with Scroll Reveal */}
       <div
-        className={`text-center mb-10 transition-all duration-700 ease-out ${
+        className={`text-center mb-8 sm:mb-10 transition-all duration-700 ease-out ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--mfl-cream)] tracking-tight">
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-[var(--mfl-cream)] tracking-tight">
           Câu hỏi <span className="italic font-serif text-[var(--mfl-glow)]">thường gặp</span>
         </h2>
-        <p className="mt-2 text-sm text-slate-400">
+        <p className="mt-2 text-xs sm:text-sm text-slate-400 px-2">
           Giải đáp chi tiết về cơ chế hũ, AI OCR và tính an toàn bảo mật của WIVI.
         </p>
 
         {/* Category Filter Tabs */}
         <div
-          className={`mt-6 flex flex-wrap items-center justify-center gap-2 transition-all duration-700 delay-150 ${
+          className={`mt-5 sm:mt-6 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 transition-all duration-700 delay-150 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -505,7 +505,7 @@ export const MaroonFaqSection: React.FC = () => {
                 setCategory(c.id);
                 setOpenIdx(0);
               }}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
+              className={`px-3 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold transition-all duration-200 cursor-pointer ${
                 category === c.id
                   ? "bg-sky-500 text-white shadow-md shadow-sky-600/30"
                   : "bg-white/5 text-slate-400 hover:text-white hover:bg-white/10"
@@ -518,14 +518,14 @@ export const MaroonFaqSection: React.FC = () => {
       </div>
 
       {/* Accordion List with Cascading Staggered Scroll Reveal */}
-      <div className="space-y-3">
+      <div className="space-y-2.5 sm:space-y-3">
         {filteredFaqs.map((item, idx) => {
           const isOpen = openIdx === idx;
           return (
             <div
               key={idx}
               style={{ transitionDelay: isVisible ? `${idx * 80 + 200}ms` : "0ms" }}
-              className={`rounded-2xl border transition-all duration-500 ease-out overflow-hidden ${
+              className={`rounded-xl sm:rounded-2xl border transition-all duration-500 ease-out overflow-hidden ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               } ${
                 isOpen
@@ -536,22 +536,21 @@ export const MaroonFaqSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setOpenIdx(isOpen ? null : idx)}
-                className="w-full text-left flex items-center justify-between gap-4 cursor-pointer transition-colors"
-                style={{ padding: "20px 24px", minHeight: "68px" }}
+                className="w-full text-left flex items-center justify-between gap-3 cursor-pointer transition-colors p-4 sm:p-6 min-h-[58px] sm:min-h-[68px]"
               >
                 <span
-                  className={`font-bold text-sm sm:text-base leading-snug transition-colors duration-200 ${
+                  className={`font-bold text-xs sm:text-base leading-snug transition-colors duration-200 ${
                     isOpen ? "text-sky-300" : "text-[var(--mfl-cream)]"
                   }`}
                 >
                   {item.q}
                 </span>
                 <div
-                  className={`size-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                  className={`size-6 sm:size-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
                     isOpen ? "bg-sky-500/20 text-sky-400 rotate-180" : "bg-white/5 text-slate-400"
                   }`}
                 >
-                  <ChevronDown className="size-4" />
+                  <ChevronDown className="size-3.5 sm:size-4" />
                 </div>
               </button>
 
@@ -563,8 +562,7 @@ export const MaroonFaqSection: React.FC = () => {
               >
                 <div className="overflow-hidden">
                   <div
-                    className="text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-sky-400/10"
-                    style={{ padding: "16px 24px 24px 24px" }}
+                    className="text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-sky-400/10 p-4 sm:p-6 pt-3 sm:pt-4 pb-5 sm:pb-6"
                   >
                     {item.a}
                   </div>
@@ -593,19 +591,19 @@ export const MaroonBankingPartners: React.FC = () => {
   ];
 
   return (
-    <div className="w-full py-8 overflow-hidden border-y border-[var(--mfl-glow)]/10 bg-[var(--mfl-night)]/50">
-      <p className="text-center text-xs font-semibold text-slate-400 uppercase tracking-wider mb-6">
+    <div className="w-full py-6 sm:py-8 overflow-hidden border-y border-[var(--mfl-glow)]/10 bg-[var(--mfl-night)]/50">
+      <p className="text-center text-[11px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4 sm:mb-6 px-4">
         Tương thích và hỗ trợ trích xuất từ 30+ đối tác ngân hàng & ví điện tử tại Việt Nam
       </p>
       <div className="relative w-full overflow-hidden mask-marquee-fade">
-        <div className="animate-marquee-rtl flex items-center gap-6">
+        <div className="animate-marquee-rtl flex items-center gap-3 sm:gap-6">
           {[...partners, ...partners].map((p, idx) => (
             <div
               key={idx}
-              className="shrink-0 flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-[var(--mfl-glow)]/15 hover:border-[var(--mfl-glow)]/40 transition-all cursor-pointer"
+              className="shrink-0 flex items-center gap-2 sm:gap-2.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-white/5 border border-[var(--mfl-glow)]/15 hover:border-[var(--mfl-glow)]/40 transition-all cursor-pointer"
             >
               <img src={p.logo} alt={p.name} className="h-4 sm:h-5 w-auto object-contain brightness-95" />
-              <span className="text-xs font-bold text-[var(--mfl-cream)]">{p.name}</span>
+              <span className="text-[11px] sm:text-xs font-bold text-[var(--mfl-cream)]">{p.name}</span>
             </div>
           ))}
         </div>
@@ -686,23 +684,23 @@ export const MaroonTestimonialSection: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} id="testimonials" className="relative py-20 px-4 sm:px-6 max-w-4xl mx-auto">
+    <section ref={sectionRef} id="testimonials" className="relative py-14 sm:py-20 px-4 sm:px-6 max-w-4xl mx-auto">
       {/* Section Header with Scroll Reveal */}
       <div
-        className={`text-center mb-10 transition-all duration-700 ease-out ${
+        className={`text-center mb-8 sm:mb-10 transition-all duration-700 ease-out ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--mfl-cream)] tracking-tight">
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-[var(--mfl-cream)] tracking-tight">
           Người dùng thật, <span className="italic font-serif text-[var(--mfl-glow)]">kết quả thật</span>
         </h2>
-        <p className="mt-2 text-sm text-slate-400">
+        <p className="mt-2 text-xs sm:text-sm text-slate-400 px-2">
           Lắng nghe chia sẻ trực tiếp từ những người trẻ đã tìm thấy sự thảnh thơi tài chính cùng WIVI.
         </p>
 
         {/* Interactive User Avatar Selector Tabs with Scroll Reveal */}
         <div
-          className={`mt-8 flex items-center justify-center gap-3 sm:gap-4 transition-all duration-700 delay-200 ${
+          className={`mt-6 sm:mt-8 flex items-center justify-center gap-2 sm:gap-4 transition-all duration-700 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
@@ -713,7 +711,7 @@ export const MaroonTestimonialSection: React.FC = () => {
                 key={t.id}
                 type="button"
                 onClick={() => handleSelect(idx)}
-                className={`group flex items-center gap-2.5 px-3.5 py-2 rounded-full transition-all duration-300 cursor-pointer ${
+                className={`group flex items-center gap-2 sm:gap-2.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full transition-all duration-300 cursor-pointer ${
                   isSelected
                     ? "bg-sky-500/20 border-2 border-sky-400 shadow-lg shadow-sky-950/60 scale-105"
                     : "bg-white/5 border border-white/10 hover:border-sky-400/40 hover:bg-white/10 opacity-70 hover:opacity-100"
@@ -744,12 +742,12 @@ export const MaroonTestimonialSection: React.FC = () => {
 
       {/* Main Animated Card with Scroll Reveal */}
       <div
-        className={`rounded-3xl p-8 sm:p-12 border border-sky-400/30 bg-gradient-to-br from-[#07162c] via-[#091726] to-[#040e1a] shadow-2xl relative overflow-hidden transition-all duration-1000 delay-300 ease-out ${
+        className={`rounded-2xl sm:rounded-3xl p-5 sm:p-12 border border-sky-400/30 bg-gradient-to-br from-[#07162c] via-[#091726] to-[#040e1a] shadow-2xl relative overflow-hidden transition-all duration-1000 delay-300 ease-out ${
           isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-12 scale-[0.96]"
         }`}
       >
         {/* Floating Background Quote Symbol with Soft Float */}
-        <Quote className="size-24 text-sky-400/10 absolute -top-4 -left-4 pointer-events-none animate-pulse" />
+        <Quote className="size-16 sm:size-24 text-sky-400/10 absolute -top-2 -left-2 sm:-top-4 sm:-left-4 pointer-events-none animate-pulse" />
 
         {/* Dynamic Animated Content Container */}
         <div
@@ -757,42 +755,39 @@ export const MaroonTestimonialSection: React.FC = () => {
             isFading ? "opacity-0 translate-y-2 scale-[0.99]" : "opacity-100 translate-y-0 scale-100"
           }`}
         >
-          {/* Top Row: Stars + Tag */}
-         
-
           {/* Interview Question */}
-          <div className="mb-4 text-xs sm:text-sm font-semibold text-sky-400/90 flex items-center gap-2">
-            <span className="px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 text-[11px] font-extrabold uppercase">
+          <div className="mb-3 sm:mb-4 text-xs sm:text-sm font-semibold text-sky-400/90 flex flex-wrap items-center gap-1.5 sm:gap-2">
+            <span className="px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 text-[10px] sm:text-[11px] font-extrabold uppercase shrink-0">
               Phỏng vấn
             </span>
-            <span>"{current.question}"</span>
+            <span className="leading-snug">"{current.question}"</span>
           </div>
 
           {/* User Answer Quote */}
-          <blockquote className="text-base sm:text-xl lg:text-2xl text-[var(--mfl-cream)] italic font-serif leading-relaxed">
+          <blockquote className="text-sm sm:text-xl lg:text-2xl text-[var(--mfl-cream)] italic font-serif leading-relaxed">
             "{current.quote}"
           </blockquote>
 
           {/* Impact Metrics Pill Row */}
-          <div className="mt-8 pt-6 border-t border-sky-400/15 grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-sky-400/15 grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-4">
             {current.metrics.map((m, mIdx) => (
-              <div key={mIdx} className="p-3 rounded-2xl bg-white/[0.03] border border-white/5">
-                <div className="text-[11px] text-slate-400">{m.label}</div>
-                <div className="text-lg sm:text-xl font-extrabold text-sky-400 tracking-tight mt-0.5">
+              <div key={mIdx} className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/5">
+                <div className="text-[10px] sm:text-[11px] text-slate-400">{m.label}</div>
+                <div className="text-base sm:text-xl font-extrabold text-sky-400 tracking-tight mt-0.5">
                   {m.value}
                 </div>
               </div>
             ))}
 
-            <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/5 col-span-2 sm:col-span-1 flex items-center gap-3">
+            <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/5 col-span-2 sm:col-span-1 flex items-center gap-2.5 sm:gap-3">
               <img
                 src={current.avatar}
                 alt={current.author}
-                className="size-10 rounded-full ring-2 ring-sky-400/50 object-cover"
+                className="size-8 sm:size-10 rounded-full ring-2 ring-sky-400/50 object-cover shrink-0"
               />
-              <div>
-                <div className="font-bold text-xs sm:text-sm text-white">{current.author}</div>
-                <div className="text-[10px] text-slate-400">{current.location}</div>
+              <div className="min-w-0">
+                <div className="font-bold text-xs sm:text-sm text-white truncate">{current.author}</div>
+                <div className="text-[10px] text-slate-400 truncate">{current.location}</div>
               </div>
             </div>
           </div>
