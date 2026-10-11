@@ -9,6 +9,16 @@ import {
 } from "./components/MaroonFintechSections";
 
 export function App() {
+  const [isMobile, setIsMobile] = React.useState(false);
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   // Stat Donut Cards - Pure VND
   const statCards = [
     {
@@ -100,8 +110,8 @@ export function App() {
             <Wivi3DModel
               modelPath="/modal3d/8899c880e7456aaaaba35722f50805e0.glb"
               className="w-full h-full"
-              scale={2.3}
-              positionY={-1}
+              scale={isMobile ? 2.05 : 2.3}
+              positionY={isMobile ? -0.45 : -1}
             />
           </div>
         }
@@ -216,11 +226,11 @@ export function App() {
         <MaroonFaqSection />
 
         {/* Pre-footer App Store & Google Play download badges banner */}
-        <div id="download" className="py-12 px-4 text-center">
-          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
+        <div id="download" className="py-8 sm:py-12 px-4 text-center">
+          <p className="text-[11px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 sm:mb-4">
             Tải ngay trên mọi nền tảng di động
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <a
               href="#"
               className="inline-block transition-transform duration-300 hover:scale-105 active:scale-95"
@@ -229,7 +239,7 @@ export function App() {
               <img
                 src="/google-play-badge.svg"
                 alt="Google Play"
-                className="h-11 sm:h-12 w-auto object-contain cursor-pointer"
+                className="h-10 sm:h-12 w-auto object-contain cursor-pointer"
               />
             </a>
             <a
@@ -240,11 +250,11 @@ export function App() {
               <img
                 src="/app-store-badge.svg"
                 alt="App Store"
-                className="h-11 sm:h-12 w-auto object-contain cursor-pointer"
+                className="h-10 sm:h-12 w-auto object-contain cursor-pointer"
               />
             </a>
           </div>
-          <div className="mt-4 text-[11px] text-slate-400">
+          <div className="mt-3 sm:mt-4 text-[10.5px] sm:text-[11px] text-slate-400 px-2 leading-relaxed">
             Miễn phí trọn đời • Không cần thẻ tín dụng • Cài đặt trong 30 giây
           </div>
         </div>
