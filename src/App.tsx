@@ -168,7 +168,7 @@ export function App() {
           { label: "Hỏi Đáp", href: "#faq" },
           { label: "Tải App", href: "#download" },
         ]}
-        login={{ label: "Đăng Nhập", href: "#download" }}
+        //login={{ label: "Đăng Nhập sss", href: "#download" }}
         signup={{ label: "Tải App", href: "#download" }}
         cta={{
           title: "Sẵn sàng làm chủ tài chính, *ngay hôm nay.*",
@@ -209,8 +209,8 @@ export function App() {
             },
           ],
           socials: [
-            { label: "Facebook", href: "#" },
-            { label: "TikTok", href: "#" },
+            { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61593826921935", target: "_blank" },
+            { label: "TikTok", href: "https://www.tiktok.com/@wivi.__", target: "_blank" },
             { label: "Threads", href: "#" },
             { label: "LinkedIn", href: "#" },
           ],
