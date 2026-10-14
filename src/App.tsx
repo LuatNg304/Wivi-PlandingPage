@@ -242,7 +242,7 @@ export function App() {
                 className="h-10 sm:h-12 w-auto object-contain cursor-pointer"
               />
             </a>
-            <a
+            {/* <a
               href="#"
               className="inline-block transition-transform duration-300 hover:scale-105 active:scale-95"
               aria-label="Download on App Store"
@@ -252,10 +252,10 @@ export function App() {
                 alt="App Store"
                 className="h-10 sm:h-12 w-auto object-contain cursor-pointer"
               />
-            </a>
+            </a> */}
           </div>
           <div className="mt-3 sm:mt-4 text-[10.5px] sm:text-[11px] text-slate-400 px-2 leading-relaxed">
-            Miễn phí trọn đời • Không cần thẻ tín dụng • Cài đặt trong 30 giây
+            Cài đặt trong 30 giây • Không yêu cầu quyền truy cập ngân hàng • Bảo mật tuyệt đối
           </div>
         </div>
       </MaroonFintechBase>
