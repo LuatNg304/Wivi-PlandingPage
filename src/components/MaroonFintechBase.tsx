@@ -1786,7 +1786,7 @@ function vt({
   brand: a = "synais.",
   logo: r,
   nav: t = Ye,
-  login: s = { label: "Log in", href: "#" },
+  login: s = null,
   signup: i = { label: "Sign up", href: "#" },
   backer: n = { prefix: "Backed by", name: "Orbit Ventures", mark: "O" },
   title: d = `Smarter *Financial*
@@ -2617,19 +2617,22 @@ Management`,
                           children: [
                             e.jsx("p", { children: l.title }),
                             e.jsx("ul", {
-                              children: l.links.map((f) =>
-                                e.jsx(
+                              children: l.links.map((f) => {
+                                const isExt = f.target === "_blank" || (f.href && /^https?:\/\//i.test(f.href));
+                                return e.jsx(
                                   "li",
                                   {
                                     children: e.jsx("a", {
                                       href: f.href || "#",
+                                      target: f.target || (isExt ? "_blank" : undefined),
+                                      rel: isExt ? "noopener noreferrer" : undefined,
                                       onClick: (h) => D(f.href || "#", h),
                                       children: f.label,
                                     }),
                                   },
                                   f.label,
-                                ),
-                              ),
+                                );
+                              }),
                             }),
                           ],
                         },
@@ -2657,17 +2660,20 @@ Management`,
                     }),
                     e.jsx("span", {
                       className: "mfl-foot-soc",
-                      children: (g.socials ?? []).map((l) =>
-                        e.jsx(
+                      children: (g.socials ?? []).map((l) => {
+                        const isExt = l.target === "_blank" || (l.href && /^https?:\/\//i.test(l.href));
+                        return e.jsx(
                           "a",
                           {
                             href: l.href || "#",
+                            target: l.target || (isExt ? "_blank" : undefined),
+                            rel: isExt ? "noopener noreferrer" : undefined,
                             onClick: (f) => D(l.href || "#", f),
                             children: l.label,
                           },
                           l.label,
-                        ),
-                      ),
+                        );
+                      }),
                     }),
                   ],
                 }),
