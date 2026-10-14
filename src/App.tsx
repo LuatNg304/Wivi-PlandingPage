@@ -1,12 +1,14 @@
 import React from "react";
 import { MaroonFintechBase } from "./components/MaroonFintechBase";
-import { Wivi3DModel } from "./components/Wivi3DModel";
+import { HeroFeatureVisual } from "./components/HeroFeatureVisual";
 import {
   MaroonPricingSection,
   MaroonFaqSection,
-  MaroonBankingPartners,
-  MaroonTestimonialSection,
 } from "./components/MaroonFintechSections";
+import { AboutMissionSection } from "./components/AboutMissionSection";
+import { BreakthroughFeaturesSection } from "./components/BreakthroughFeaturesSection";
+import { AppScreensCarousel } from "./components/AppScreensCarousel";
+import { HowItWorksSection } from "./components/HowItWorksSection";
 
 export function App() {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -84,86 +86,31 @@ export function App() {
         }
         palette="ocean"
         backer={null}
-        title={`Làm chủ tài chính\n*bằng kỷ luật* và sự thảnh thơi`}
-        subtitle="Phương pháp 6 Hũ kết hợp AI thị giác bóc tách hoá đơn 2s tự động. Xây dựng thói quen tài chính kỷ luật vững vàng và tự do thực sự."
+        title={`Bạn kiếm được tiền.\n*Nhưng tiền của bạn* đang đi đâu?`}
+        subtitle="Đừng để mỗi kỳ lương về là một lần hồi hộp, và mỗi cuối tháng lại là một nỗi âu lo. WIVI không phải là cuốn sổ ghi chép khô khan — WIVI là người bạn đồng hành AI giúp bạn giữ tiền thông minh, chi tiêu không cắn rứt và tự tin làm chủ tương lai."
         primaryAction={{
-          label: "Tải App Miễn Phí",
+          label: "Bắt đầu hành trình tự do tài chính — Miễn phí",
           href: "#download",
         }}
         secondaryAction={{
-          label: "Xem Bảng Giá",
-          href: "#pricing",
+          label: "Khám phá câu chuyện của WIVI ▶",
+          href: "#about",
         }}
+        socialProof={[]}
         info={{
           label: "/wivi-core/",
           text: "WIVI tự động chia tiền lương vào từng hũ theo tỷ lệ vàng, *bóc tách hóa đơn trong 2 giây bằng AI và cảnh báo bội chi trước khi bạn kịp hết tiền.*",
         }}
         statCards={statCards}
-        customModel={
-          <div className="w-full h-full flex items-center justify-center relative cursor-grab active:cursor-grabbing">
-            {/* Ambient Cyan/Ocean Pulsing Glow behind 3D Model */}
-            <div className="absolute inset-0 translate-y-8 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.36),rgba(2,132,199,0.18)_50%,transparent_72%)] rounded-full blur-3xl animate-pulse pointer-events-none" />
-            <div className="absolute -inset-6 translate-y-8 bg-[radial-gradient(ellipse_at_bottom,rgba(14,165,233,0.22),transparent_70%)] blur-2xl pointer-events-none" />
-
-
-
-            <Wivi3DModel
-              modelPath="/modal3d/8899c880e7456aaaaba35722f50805e0.glb"
-              className="w-full h-full"
-              scale={isMobile ? 2.05 : 2.3}
-              positionY={isMobile ? -0.45 : -1}
-            />
-          </div>
-        }
-        afterHero={<MaroonBankingPartners />}
-        about={{
-          kicker: "Triết lý WIVI",
-          statement:
-            "WIVI {mark} giúp người trẻ làm chủ tài chính cá nhân: tự động hóa phân bổ dòng tiền, bóc tách hóa đơn AI 2 giây và nuôi dưỡng chuỗi kỷ luật thép mỗi ngày.",
-          stats: [
-            { value: 50000, suffix: "+", label: "Người dùng kỷ luật" },
-            {
-              value: 2.1,
-              decimals: 1,
-              suffix: "s",
-              label: "Quét hoá đơn AI OCR",
-            },
-            {
-              value: 99.4,
-              decimals: 1,
-              suffix: "%",
-              label: "Độ chính xác nhận diện",
-            },
-          ],
-        }}
-        features={{
-          kicker: "Trụ cột công nghệ",
-          title: `Tự Động Hoá *6 Hũ,*\n*Quản Lý* Trọn Vẹn Dòng Tiền`,
-          subtitle:
-            "Không còn vật lộn với bảng tính Excel hay nỗi lo rỗng túi mỗi cuối tháng.",
-        }}
-        wallet={{
-          title: "Hệ Thống Hũ Tài Chính Đa Năng",
-          description:
-            "Xem chi tiết số dư từng hũ, tài khoản ngân hàng và ví tích lũy trong một giao diện duy nhất.",
-          growth: "+35% · Tỷ lệ tích luỹ",
-          wallets: [
-            { code: "VND", symbol: "₫", balance: 68500000, perUsd: 1 },
-            { code: "FFA", symbol: "₫", balance: 24500000, perUsd: 1 },
-            { code: "LTSS", symbol: "₫", balance: 32000000, perUsd: 1 },
-            { code: "PLAY", symbol: "₫", balance: 12000000, perUsd: 1 },
-          ],
-        }}
-        spending={{
-          title: "Bản Đồ Kỷ Luật Chi Tiêu 52 Tuần",
-          description:
-            "Theo dõi nhịp điệu chi tiêu từng tuần, phát hiện ngay các đợt vung tay quá trán trước khi bội chi.",
-          budget: 25000000,
-          seed: 14,
-        }}
+        customModel={<HeroFeatureVisual isMobile={isMobile} />}
+        afterHero={null}
+        about={null}
+        features={null}
         nav={[
+          { label: "Về WIVI", href: "#about" },
           { label: "Tính Năng", href: "#features" },
-          { label: "Đánh Giá", href: "#testimonials" },
+          { label: "Giao Diện App", href: "#app-screens" },
+          { label: "Hướng Dẫn", href: "#guide" },
           { label: "Bảng Giá", href: "#pricing" },
           { label: "Hỏi Đáp", href: "#faq" },
           { label: "Tải App", href: "#download" },
@@ -171,11 +118,11 @@ export function App() {
         //login={{ label: "Đăng Nhập sss", href: "#download" }}
         signup={{ label: "Tải App", href: "#download" }}
         cta={{
-          title: "Sẵn sàng làm chủ tài chính, *ngay hôm nay.*",
+          title: "Tự do tài chính không bắt đầu từ việc bạn kiếm được bao nhiêu tiền,\n*mà bắt đầu từ khoảnh khắc* bạn quyết định làm chủ số tiền mình có.",
           subtitle:
-            "Gia nhập hơn 50.000 người dùng kiểm soát dòng tiền tự động. Miễn phí trọn đời các tính năng cốt lõi.",
+            "Tải ứng dụng WIVI & Trải nghiệm ngay hôm nay. Sẵn sàng trên Web, iOS và Android.",
           action: {
-            label: "Tải WIVI Miễn Phí",
+            label: "Tải Ứng Dụng WIVI & Trải Nghiệm Ngay",
             href: "#download",
           },
         }}
@@ -193,8 +140,8 @@ export function App() {
             {
               title: "Công Ty",
               links: [
-                { label: "Về WIVI", href: "#about" },
-                { label: "Tuyển Dụng", href: "#about" },
+                { label: "Về WIVI & Sứ Mệnh", href: "#about" },
+                { label: "Giao Diện Ứng Dụng", href: "#app-screens" },
                 { label: "Chính Sách Bảo Mật", href: "#faq" },
                 { label: "Điều Khoản Sử Dụng", href: "#faq" },
               ],
@@ -220,8 +167,19 @@ export function App() {
           await new Promise((resolve) => setTimeout(resolve, 800));
         }}
       >
+        {/* About & Mission Section with Real Team Photos */}
+        <AboutMissionSection />
+
+        {/* Breakthrough Features (4 Pillars) */}
+        <BreakthroughFeaturesSection />
+
+        {/* Interactive App Screens Carousel */}
+        <AppScreensCarousel />
+
+        {/* 4-Step User Guide */}
+        <HowItWorksSection />
+
         {/* Extra Luxury WIVI Sections */}
-        <MaroonTestimonialSection />
         <MaroonPricingSection />
         <MaroonFaqSection />
 
