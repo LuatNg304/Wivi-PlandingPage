@@ -73,8 +73,8 @@ export function App() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#091726] text-white">
-      {/* Main Luxury Ocean Blue Fintech Canvas */}
+    <div className="relative min-h-screen bg-white text-slate-900">
+      {/* Main Clean White & Ocean Blue Fintech Canvas */}
       <MaroonFintechBase
         brand="WIVI"
         logo={
@@ -184,14 +184,14 @@ export function App() {
         <MaroonFaqSection />
 
         {/* Pre-footer App Store & Google Play download badges banner */}
-        <div id="download" className="py-8 sm:py-12 px-4 text-center">
-          <p className="text-[11px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 sm:mb-4">
+        <div id="download" className="py-10 sm:py-14 px-4 text-center bg-slate-50 border-t border-slate-200">
+          <p className="text-xs font-bold text-sky-700 uppercase tracking-widest mb-3 sm:mb-4">
             Tải ngay trên mọi nền tảng di động
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <a
               href="#"
-              className="inline-block transition-transform duration-300 hover:scale-105 active:scale-95"
+              className="inline-block transition-transform duration-300 hover:scale-105 active:scale-95 shadow-sm rounded-xl"
               aria-label="Get it on Google Play"
             >
               <img
@@ -200,19 +200,8 @@ export function App() {
                 className="h-10 sm:h-12 w-auto object-contain cursor-pointer"
               />
             </a>
-            {/* <a
-              href="#"
-              className="inline-block transition-transform duration-300 hover:scale-105 active:scale-95"
-              aria-label="Download on App Store"
-            >
-              <img
-                src="/app-store-badge.svg"
-                alt="App Store"
-                className="h-10 sm:h-12 w-auto object-contain cursor-pointer"
-              />
-            </a> */}
           </div>
-          <div className="mt-3 sm:mt-4 text-[10.5px] sm:text-[11px] text-slate-400 px-2 leading-relaxed">
+          <div className="mt-3 sm:mt-4 text-xs font-medium text-slate-500 px-2 leading-relaxed">
             Cài đặt trong 30 giây • Không yêu cầu quyền truy cập ngân hàng • Bảo mật tuyệt đối
           </div>
         </div>

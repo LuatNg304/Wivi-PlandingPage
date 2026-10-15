@@ -4,17 +4,17 @@ import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 const e = { jsx, jsxs, Fragment };
 const ae = {
     ocean: {
-      frame: "#091726",
-      paper: "#ecf4fa",
-      ink: "#0c1b33",
-      muted: "#5a7594",
+      frame: "#ffffff",
+      paper: "#ffffff",
+      ink: "#0f172a",
+      muted: "#475569",
       brand: "#0284c7",
-      night: "#051324",
-      card: "#0b2038",
-      cream: "#e0f2fe",
-      device: "#7dd3fc",
-      glow: "#38bdf8",
-      satin: ["#030e1a", "#0c2b52", "#bae6fd"],
+      night: "#ffffff",
+      card: "#ffffff",
+      cream: "#0f172a",
+      device: "#0284c7",
+      glow: "#0284c7",
+      satin: ["#ffffff", "#f0f7ff", "#e0f2fe"],
     },
     maroon: {
       frame: "#7a2e33",

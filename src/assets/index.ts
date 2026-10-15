@@ -20,7 +20,7 @@ export const ASSETS = {
 
   // ── About Me / Founder Story ──────────────────────────────────
   aboutMe: {
-    featureHighlight: "/assets/about-me/tinhnang.png",  // Tính năng showcase
+     // Tính năng showcase
     titleGraphic: "/assets/about-me/title.png",          // Title/Brand graphic
   },
 
