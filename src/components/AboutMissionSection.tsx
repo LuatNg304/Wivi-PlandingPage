@@ -101,35 +101,35 @@ export const AboutMissionSection: React.FC = () => {
               </h3>
             </div>
 
-            <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed pl-14 border-l-2 border-sky-400">
-              <p className="text-slate-900 font-bold">
-                "Chào bạn, tôi là người tạo nên WIVI.
+            <div className="space-y-3.5 text-slate-600 text-sm sm:text-base leading-relaxed pl-14 border-l-2 border-sky-400">
+              <p>
+                "Nhiều năm trước, tôi chăm chỉ làm lụng với thu nhập khá, nhưng tài khoản luôn bấp bênh và không có lấy một bệ đỡ tài chính khi biến cố xảy đến. Những ứng dụng cũ chỉ là <strong className="text-slate-900 font-semibold">bảng tính vô cảm</strong> — báo vượt ngân sách mà chẳng cho tôi biết ngày mai phải sống thế nào.
               </p>
               <p>
-                Nhiều năm trước, tôi cũng như phần lớn những người trẻ bước vào đời: đi làm chăm chỉ, có thu nhập khá, nhưng tài khoản ngân hàng luôn biến động thất thường. Mỗi lần có sự cố bất ngờ hay người thân đau ốm, tôi mới bàng hoàng nhận ra mình chưa hề có một bệ đỡ tài chính nào vững chắc.
+                Tôi tạo ra <strong className="text-[#0284c7] font-bold">WIVI</strong> như một trợ lý AI mang trái tim nhân văn: <strong className="text-slate-900 font-semibold">không phán xét</strong>, đồng hành cùng bạn tích lũy quỹ an toàn, vượt qua áp lực và tự tin chạm tới cột mốc tự do tài chính."
               </p>
-              <p>
-                Tôi từng thử hàng chục ứng dụng quản lý chi tiêu. Nhưng chúng chỉ là những bảng tính vô cảm. Khi tôi lỡ chi tiêu quá tay, app chỉ báo 'vượt ngân sách' mà không cho tôi biết phải giải quyết thế nào để ngày mai tôi không phải nhịn ăn.
-              </p>
-              <p className="text-slate-900 font-semibold">
-                Đó là lý do tôi tạo ra WIVI. Chữ 'VI' trong WIVI bắt nguồn từ <span className="text-[#0284c7] font-bold">Vị thế — Tự do — Kỷ luật Việt.</span> Tôi muốn gửi gắm vào đây một trợ lý AI thông minh mang trái tim nhân văn: không phán xét cách bạn tiêu tiền, mà thấu hiểu từng ước mơ của bạn, giúp bạn từng bước tích lũy quỹ an toàn, vượt qua áp lực nợ nần và tự tin chạm tới cột mốc tự do tài chính.
-              </p>
-              <p className="text-slate-500 text-sm italic">
-                WIVI là món quà tôi dành tặng cho chính mình của những năm tháng chông chênh, và dành tặng cho bạn — người đang nỗ lực mỗi ngày vì một cuộc sống tốt đẹp hơn."
+              <p className="text-xs sm:text-sm text-slate-500 font-medium italic pt-1">
+                — Lời chia sẻ từ người sáng lập WIVI
               </p>
             </div>
 
             {/* Core promise checklist */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 pl-14">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 pl-14">
               {[
-                "Không phán xét cách bạn tiêu tiền",
-                "Thấu hiểu từng ước mơ cá nhân",
-                "Bảo mật tuyệt đối — dữ liệu trên máy bạn",
-                "Tự động hóa — không cần nhớ nhập tay",
-              ].map((val, i) => (
-                <div key={i} className="flex items-center gap-2 text-xs sm:text-sm text-slate-700 font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>{val}</span>
+                { title: "Không phán xét", desc: "Thấu hiểu thay vì tạo thêm áp lực chi tiêu" },
+                { title: "Hướng tới ước mơ", desc: "Cá nhân hóa lộ trình tích lũy theo mục tiêu bạn muốn" },
+                { title: "Bảo mật tuyệt đối", desc: "Dữ liệu tài chính an toàn trên máy bạn" },
+                { title: "Tự động 100%", desc: "Quét hóa đơn tức thì, tạm biệt nhập tay" },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50/80 border border-slate-200/70 hover:border-sky-300 hover:bg-sky-50/30 transition-all duration-200"
+                >
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <div className="text-xs sm:text-sm leading-snug">
+                    <span className="font-bold text-slate-900">{item.title}: </span>
+                    <span className="text-slate-600 font-normal">{item.desc}</span>
+                  </div>
                 </div>
               ))}
             </div>
