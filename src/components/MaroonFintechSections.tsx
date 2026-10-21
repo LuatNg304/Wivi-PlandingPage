@@ -134,7 +134,7 @@ export const MaroonCalculatorSection: React.FC = () => {
           <Sparkles className="size-3.5" /> Mô Phỏng Dòng Tiền
         </p>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#e0f2fe] leading-tight">
-          Thu nhập về, <span className="italic font-serif text-[#38bdf8]">tiền tự chảy</span> vào 6 hũ
+          Thu nhập về, <span className="text-[#38bdf8] font-extrabold">tiền tự chảy</span> vào 6 hũ
         </h2>
         <p className="mt-3 text-sm sm:text-base text-slate-400 leading-relaxed">
           Kéo chọn mức lương của bạn để thấy WIVI tự động chia tiền theo phương pháp khoa học T. Harv Eker.
@@ -238,7 +238,7 @@ export const MaroonCalculatorSection: React.FC = () => {
   );
 };
 
-// ── 2. PRICING SECTION (Bảng Giá 3 Tầng - Theo Tháng với Scroll Reveal Animation) ──
+// ── 2. PRICING SECTION (Bảng Giá 3 Tầng - Clean White & Ocean Blue) ──
 export const MaroonPricingSection: React.FC = () => {
   const [sectionRef, isVisible] = useScrollReveal<HTMLElement>(0.1);
 
@@ -259,7 +259,8 @@ export const MaroonPricingSection: React.FC = () => {
         "Lưu trữ dữ liệu bảo mật trên thiết bị",
       ],
       btnText: "Bắt Đầu Miễn Phí",
-      btnClass: "bg-white/10 hover:bg-white/20 text-[var(--mfl-cream)] border border-white/15",
+      btnClass: "bg-slate-100 hover:bg-slate-200 border border-slate-200",
+      btnStyle: { color: "#1e293b", backgroundColor: "#f1f5f9" },
     },
     {
       id: "premium",
@@ -277,7 +278,8 @@ export const MaroonPricingSection: React.FC = () => {
         "Đồng bộ Cloud đa thiết bị (iOS, Android, Web)",
       ],
       btnText: "Chọn Gói Premium",
-      btnClass: "bg-sky-500 hover:bg-sky-400 text-white font-extrabold shadow-lg shadow-sky-500/40",
+      btnClass: "bg-white hover:bg-sky-50 font-black shadow-md",
+      btnStyle: { color: "#0284c7", backgroundColor: "#ffffff" },
     },
     {
       id: "pro",
@@ -295,30 +297,35 @@ export const MaroonPricingSection: React.FC = () => {
         "Hỗ trợ ưu tiên 1:1 từ chuyên gia tài chính",
       ],
       btnText: "Dùng thử Pro 14 ngày",
-      btnClass: "bg-white hover:bg-slate-100 text-[#091726] font-extrabold shadow-md",
+      btnClass: "bg-slate-900 hover:bg-slate-800 font-bold shadow-sm",
+      btnStyle: { color: "#ffffff", backgroundColor: "#0f172a" },
     },
   ];
 
   return (
-    <section ref={sectionRef} id="pricing" className="relative py-14 sm:py-28 px-4 sm:px-6 max-w-6xl mx-auto">
+    <section ref={sectionRef} id="pricing" className="relative py-14 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto">
       {/* Background Ambient Glow */}
       <div
-        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[250px] sm:h-[350px] bg-sky-500/10 rounded-full blur-3xl pointer-events-none -z-10 transition-opacity duration-1000 ${
-          isVisible ? "opacity-100 animate-pulse" : "opacity-0"
+        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[250px] sm:h-[350px] bg-sky-100/60 rounded-full blur-3xl pointer-events-none -z-10 transition-opacity duration-1000 ${
+          isVisible ? "opacity-100" : "opacity-0"
         }`}
       />
 
       {/* Header with Scroll Reveal */}
       <div
-        className={`text-center max-w-2xl mx-auto mb-10 sm:mb-12 transition-all duration-700 ease-out ${
+        className={`text-center max-w-2xl mx-auto mb-10 sm:mb-14 transition-all duration-700 ease-out ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--mfl-cream)] leading-tight">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-700 text-xs font-bold tracking-widest uppercase mb-3 shadow-xs">
+          <Sparkles className="w-3.5 h-3.5 text-sky-600" />
+          <span>Bảng Giá Minh Bạch</span>
+        </div>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
           Đầu tư một cốc cà phê, <br />
-          <span className="italic font-serif text-[var(--mfl-glow)]">tiết kiệm hàng triệu đồng</span>
+          <span className="text-[#0284c7]">tiết kiệm hàng triệu đồng</span>
         </h2>
-        <p className="mt-2 sm:mt-3 text-xs sm:text-base text-slate-400 leading-relaxed px-2">
+        <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed px-2">
           Chi phí minh bạch theo tháng. Không phí ẩn. Hủy bất cứ lúc nào chỉ với một chạm.
         </p>
       </div>
@@ -330,104 +337,110 @@ export const MaroonPricingSection: React.FC = () => {
           return (
             <div
               key={p.id}
-              className={`group relative rounded-2xl sm:rounded-3xl transition-all duration-700 ease-out flex flex-col justify-between ${
+              className={`group relative rounded-3xl transition-all duration-700 ease-out flex flex-col justify-between ${
                 isVisible ? `opacity-100 translate-y-0 ${delays[idx]}` : "opacity-0 translate-y-12"
               } ${
-              p.highlight
-                ? "p-[2px] bg-gradient-to-b from-sky-400 via-sky-500 to-cyan-600 shadow-2xl shadow-sky-950/70 lg:-translate-y-3 hover:-translate-y-5"
-                : "border border-white/10 bg-[#07162c]/90 hover:border-sky-400/40 hover:-translate-y-2 p-5 sm:p-8"
-            }`}
-          >
-            {p.highlight ? (
-              <div className="w-full h-full rounded-[14px] sm:rounded-[22px] bg-[#07162c] p-5 sm:p-8 flex flex-col justify-between relative overflow-hidden">
-                {/* Glowing Corner Badge */}
-                <div className="absolute top-0 right-0 px-3 sm:px-4 py-1 sm:py-1.5 rounded-bl-xl sm:rounded-bl-2xl bg-gradient-to-r from-sky-500 to-cyan-400 text-slate-950 text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider shadow-md">
-                  Khuyên Dùng ★
-                </div>
+                p.highlight
+                  ? "lg:-translate-y-3 hover:-translate-y-5"
+                  : "hover:-translate-y-2"
+              }`}
+            >
+              {p.highlight ? (
+                <div className="w-full h-full rounded-[24px] sm:rounded-[28px] bg-gradient-to-b from-[#0284c7] via-[#0369a1] to-[#075985] text-white p-6 sm:p-8 flex flex-col justify-between relative shadow-xl shadow-sky-600/25 border-2 border-sky-300/80 overflow-hidden">
+                  {/* Glowing Corner Badge */}
+                  <div className="absolute top-0 right-0 px-3.5 py-1.5 rounded-bl-2xl bg-amber-400 text-slate-950 text-[10px] sm:text-[11px] font-black uppercase tracking-wider shadow-sm flex items-center gap-1">
+                    <Sparkles className="size-3 text-slate-950" />
+                    <span>Khuyên Dùng ★</span>
+                  </div>
 
-                <div>
-                  <div className="flex justify-between items-start mb-3 sm:mb-4">
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-sky-300 transition-colors">
+                  <div>
+                    <div className="mb-4">
+                      <span className="inline-block px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-[11px] font-bold uppercase tracking-wider mb-2 border border-white/20">
+                        {p.badge}
+                      </span>
+                      <h3 className="text-xl sm:text-2xl font-black text-white">
                         {p.name}
                       </h3>
-                      <p className="text-xs text-slate-400 mt-1">{p.desc}</p>
+                      <p className="text-xs sm:text-sm text-sky-100 mt-1 leading-relaxed">
+                        {p.desc}
+                      </p>
                     </div>
-                  </div>
 
-                  <div className="my-4 sm:my-6">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    <div className="my-5 sm:my-6 flex items-baseline gap-2">
+                      <span className="text-3xl sm:text-4xl font-black text-white tracking-tight font-mono">
                         {p.price}
                       </span>
-                      <span className="text-xs text-slate-400">/ {p.period}</span>
+                      <span className="text-xs sm:text-sm text-sky-100 font-medium">/ {p.period}</span>
                     </div>
+
+                    <ul className="space-y-3 pt-5 sm:pt-6 border-t border-white/20 text-xs sm:text-sm text-sky-50">
+                      {p.features.map((feat, fIdx) => (
+                        <li key={fIdx} className="flex items-start gap-2.5">
+                          <CheckCircle2 className="size-4 shrink-0 mt-0.5 text-sky-200" />
+                          <span className="font-medium text-white">{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  <ul className="space-y-2.5 sm:space-y-3 pt-5 sm:pt-6 border-t border-sky-400/20 text-xs sm:text-sm text-slate-200">
-                    {p.features.map((feat, fIdx) => (
-                      <li key={fIdx} className="flex items-start gap-2.5 group/item">
-                        <Check className="size-4 shrink-0 mt-0.5 text-sky-400 group-hover/item:scale-110 transition-transform" />
-                        <span className="group-hover/item:text-white transition-colors">{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <a
+                    href="#download"
+                    style={p.btnStyle}
+                    className={`mt-6 sm:mt-8 w-full py-3.5 rounded-xl text-center text-xs sm:text-sm font-black transition-all duration-200 block cursor-pointer hover:scale-[1.02] active:scale-[0.98] ${p.btnClass}`}
+                  >
+                    {p.btnText}
+                  </a>
                 </div>
-
-                <a
-                  href="#download"
-                  className={`mt-6 sm:mt-8 w-full py-3 sm:py-3.5 rounded-xl text-center text-xs sm:text-sm font-bold transition-all duration-300 block cursor-pointer group-hover:scale-[1.02] active:scale-[0.98] ${p.btnClass}`}
-                >
-                  {p.btnText}
-                </a>
-              </div>
-            ) : (
-              <>
-                <div>
-                  <div className="flex justify-between items-start mb-3 sm:mb-4">
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-bold text-[var(--mfl-cream)] group-hover:text-sky-300 transition-colors">
+              ) : (
+                <div className="w-full h-full rounded-[24px] sm:rounded-[28px] bg-white border border-slate-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-sky-300 transition-all duration-300">
+                  <div>
+                    <div className="mb-4">
+                      <span className={`inline-block px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider mb-2 ${
+                        idx === 0
+                          ? "bg-slate-100 text-slate-600"
+                          : "bg-sky-50 text-sky-700 border border-sky-200"
+                      }`}>
+                        {p.badge}
+                      </span>
+                      <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
                         {p.name}
                       </h3>
-                      <p className="text-xs text-slate-400 mt-1">{p.desc}</p>
+                      <p className="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">
+                        {p.desc}
+                      </p>
                     </div>
-                  </div>
 
-                  <div className="my-4 sm:my-6">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-3xl sm:text-4xl font-extrabold text-[var(--mfl-cream)] tracking-tight">
+                    <div className="my-5 sm:my-6 flex items-baseline gap-2">
+                      <span className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight font-mono">
                         {p.price}
                       </span>
-                      <span className="text-xs text-slate-400">/ {p.period}</span>
+                      <span className="text-xs sm:text-sm text-slate-500 font-medium">/ {p.period}</span>
                     </div>
+
+                    <ul className="space-y-3 pt-5 sm:pt-6 border-t border-slate-100 text-xs sm:text-sm text-slate-700">
+                      {p.features.map((feat, fIdx) => (
+                        <li key={fIdx} className="flex items-start gap-2.5">
+                          <CheckCircle2 className={`size-4 shrink-0 mt-0.5 ${
+                            idx === 0 ? "text-slate-400" : "text-[#0284c7]"
+                          }`} />
+                          <span className="font-medium text-slate-700">{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  <ul className="space-y-2.5 sm:space-y-3 pt-5 sm:pt-6 border-t border-white/10 text-xs sm:text-sm text-[var(--mfl-cream)]">
-                    {p.features.map((feat, fIdx) => (
-                      <li key={fIdx} className="flex items-start gap-2.5 group/item">
-                        <Check className="size-4 shrink-0 mt-0.5 text-sky-400 group-hover/item:scale-110 transition-transform" />
-                        <span className="text-[var(--mfl-cream)]/90 group-hover/item:text-white transition-colors">
-                          {feat}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  <a
+                    href="#download"
+                    style={p.btnStyle}
+                    className={`mt-6 sm:mt-8 w-full py-3.5 rounded-xl text-center text-xs sm:text-sm font-bold transition-all duration-200 block cursor-pointer hover:scale-[1.02] active:scale-[0.98] ${p.btnClass}`}
+                  >
+                    {p.btnText}
+                  </a>
                 </div>
-
-                <a
-                  href="#download"
-                  className={`mt-6 sm:mt-8 w-full py-3 sm:py-3.5 rounded-xl text-center text-xs sm:text-sm font-bold transition-all duration-300 block cursor-pointer group-hover:scale-[1.02] active:scale-[0.98] ${p.btnClass}`}
-                  style={{
-                    color: idx === 2 ? "#091726" : undefined,
-                  }}
-                >
-                  {p.btnText}
-                </a>
-              </>
-            )}
-          </div>
-        );
-      })}
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
   );
@@ -477,23 +490,27 @@ export const MaroonFaqSection: React.FC = () => {
   const filteredFaqs = category === "all" ? allFaqs : allFaqs.filter((f) => f.cat === category);
 
   return (
-    <section ref={sectionRef} id="faq" className="relative py-14 sm:py-28 px-4 sm:px-6 max-w-4xl mx-auto">
+    <section ref={sectionRef} id="faq" className="relative py-14 sm:py-24 px-4 sm:px-6 max-w-4xl mx-auto">
       {/* Header with Scroll Reveal */}
       <div
-        className={`text-center mb-8 sm:mb-10 transition-all duration-700 ease-out ${
+        className={`text-center mb-8 sm:mb-12 transition-all duration-700 ease-out ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <h2 className="text-2xl sm:text-4xl font-extrabold text-[var(--mfl-cream)] tracking-tight">
-          Câu hỏi <span className="italic font-serif text-[var(--mfl-glow)]">thường gặp</span>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-700 text-xs font-bold tracking-widest uppercase mb-3 shadow-xs">
+          <HelpCircle className="w-3.5 h-3.5 text-sky-600" />
+          <span>Giải Đáp Thắc Mắc</span>
+        </div>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          Câu hỏi <span className="text-[#0284c7]">thường gặp</span>
         </h2>
-        <p className="mt-2 text-xs sm:text-sm text-slate-400 px-2">
-          Giải đáp chi tiết về cơ chế hũ, AI OCR và tính an toàn bảo mật của WIVI.
+        <p className="mt-3 text-sm sm:text-base text-slate-600 px-2 max-w-xl mx-auto leading-relaxed">
+          Giải đáp chi tiết về cơ chế 6 hũ, AI OCR và tính an toàn bảo mật của WIVI.
         </p>
 
         {/* Category Filter Tabs */}
         <div
-          className={`mt-5 sm:mt-6 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 transition-all duration-700 delay-150 ${
+          className={`mt-6 flex flex-wrap items-center justify-center gap-2 transition-all duration-700 delay-150 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -505,10 +522,10 @@ export const MaroonFaqSection: React.FC = () => {
                 setCategory(c.id);
                 setOpenIdx(0);
               }}
-              className={`px-3 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold transition-all duration-200 cursor-pointer ${
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer ${
                 category === c.id
-                  ? "bg-sky-500 text-white shadow-md shadow-sky-600/30"
-                  : "bg-white/5 text-slate-400 hover:text-white hover:bg-white/10"
+                  ? "bg-[#0284c7] text-white shadow-sm"
+                  : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900 border border-slate-200/60"
               }`}
             >
               {c.label}
@@ -518,36 +535,36 @@ export const MaroonFaqSection: React.FC = () => {
       </div>
 
       {/* Accordion List with Cascading Staggered Scroll Reveal */}
-      <div className="space-y-2.5 sm:space-y-3">
+      <div className="space-y-3">
         {filteredFaqs.map((item, idx) => {
           const isOpen = openIdx === idx;
           return (
             <div
               key={idx}
-              style={{ transitionDelay: isVisible ? `${idx * 80 + 200}ms` : "0ms" }}
-              className={`rounded-xl sm:rounded-2xl border transition-all duration-500 ease-out overflow-hidden ${
+              style={{ transitionDelay: isVisible ? `${idx * 60 + 150}ms` : "0ms" }}
+              className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               } ${
                 isOpen
-                  ? "border-sky-400/50 bg-[#06182c]/95 border-l-4 border-l-sky-400 shadow-xl shadow-sky-950/50"
-                  : "border-[var(--mfl-glow)]/15 bg-[var(--mfl-night)]/80 hover:border-sky-400/40 hover:bg-white/[0.03]"
+                  ? "border-sky-300 bg-[#f0f7ff] shadow-sm border-l-4 border-l-[#0284c7]"
+                  : "border-slate-200 bg-white hover:border-sky-200 hover:bg-slate-50/50 shadow-xs"
               }`}
             >
               <button
                 type="button"
                 onClick={() => setOpenIdx(isOpen ? null : idx)}
-                className="w-full text-left flex items-center justify-between gap-3 cursor-pointer transition-colors p-4 sm:p-6 min-h-[58px] sm:min-h-[68px]"
+                className="w-full text-left flex items-center justify-between gap-3 cursor-pointer transition-colors p-4 sm:p-5 min-h-[56px] sm:min-h-[64px]"
               >
                 <span
-                  className={`font-bold text-xs sm:text-base leading-snug transition-colors duration-200 ${
-                    isOpen ? "text-sky-300" : "text-[var(--mfl-cream)]"
+                  className={`font-bold text-sm sm:text-base leading-snug transition-colors duration-200 ${
+                    isOpen ? "text-[#0284c7]" : "text-slate-900"
                   }`}
                 >
                   {item.q}
                 </span>
                 <div
                   className={`size-6 sm:size-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
-                    isOpen ? "bg-sky-500/20 text-sky-400 rotate-180" : "bg-white/5 text-slate-400"
+                    isOpen ? "bg-sky-100 text-[#0284c7] rotate-180" : "bg-slate-100 text-slate-500"
                   }`}
                 >
                   <ChevronDown className="size-3.5 sm:size-4" />
@@ -562,7 +579,7 @@ export const MaroonFaqSection: React.FC = () => {
               >
                 <div className="overflow-hidden">
                   <div
-                    className="text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-sky-400/10 p-4 sm:p-6 pt-3 sm:pt-4 pb-5 sm:pb-6"
+                    className="text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-sky-100 p-4 sm:p-5 pt-3 pb-5"
                   >
                     {item.a}
                   </div>
@@ -691,8 +708,8 @@ export const MaroonTestimonialSection: React.FC = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <h2 className="text-2xl sm:text-4xl font-extrabold text-[var(--mfl-cream)] tracking-tight">
-          Người dùng thật, <span className="italic font-serif text-[var(--mfl-glow)]">kết quả thật</span>
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Người dùng thật, <span className="text-[#0284c7]">kết quả thật</span>
         </h2>
         <p className="mt-2 text-xs sm:text-sm text-slate-400 px-2">
           Lắng nghe chia sẻ trực tiếp từ những người trẻ đã tìm thấy sự thảnh thơi tài chính cùng WIVI.
@@ -764,7 +781,7 @@ export const MaroonTestimonialSection: React.FC = () => {
           </div>
 
           {/* User Answer Quote */}
-          <blockquote className="text-sm sm:text-xl lg:text-2xl text-[var(--mfl-cream)] italic font-serif leading-relaxed">
+          <blockquote className="text-sm sm:text-xl lg:text-2xl text-slate-100 font-medium leading-relaxed">
             "{current.quote}"
           </blockquote>
 

@@ -4,17 +4,17 @@ import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 const e = { jsx, jsxs, Fragment };
 const ae = {
     ocean: {
-      frame: "#091726",
-      paper: "#ecf4fa",
-      ink: "#0c1b33",
-      muted: "#5a7594",
+      frame: "#ffffff",
+      paper: "#ffffff",
+      ink: "#0f172a",
+      muted: "#475569",
       brand: "#0284c7",
-      night: "#051324",
-      card: "#0b2038",
-      cream: "#e0f2fe",
-      device: "#7dd3fc",
-      glow: "#38bdf8",
-      satin: ["#030e1a", "#0c2b52", "#bae6fd"],
+      night: "#ffffff",
+      card: "#ffffff",
+      cream: "#0f172a",
+      device: "#0284c7",
+      glow: "#0284c7",
+      satin: ["#ffffff", "#f0f7ff", "#e0f2fe"],
     },
     maroon: {
       frame: "#7a2e33",
@@ -1795,6 +1795,7 @@ Management`,
     o = "Gain complete and confident control over each of your valuable assets with ease.",
   primaryAction: x = { label: "Get started", href: "#contact" },
   secondaryAction: y = { label: "Request demo" },
+  socialProof: sp = [],
   info: u = {
     label: "/info/",
     text: "Synais helps finance managers automate manual work, gain real-time visibility into financial *performance, and make faster, data-driven decisions with intelligent AI-powered automation.",
@@ -2120,55 +2121,144 @@ Management`,
                     }),
                 ],
               }),
-              B &&
-                e.jsxs("div", {
-                  className: "mfl-dropdown",
-                  id: S + "-menu",
-                  children: [
-                    e.jsx("ul", {
-                      children: t.map((l, f) =>
-                        e.jsx(
-                          "li",
-                          {
-                            style: { animationDelay: f * 40 + "ms" },
-                            children: e.jsxs("a", {
-                              href: l.href || "#",
-                              onClick: (h) => D(l.href, h),
-                              children: [
-                                e.jsxs("span", {
-                                  className: "mfl-dd-n",
-                                  children: ["0", f + 1],
-                                }),
-                                l.label,
-                                e.jsx("svg", {
-                                  className: "mfl-svg",
-                                  viewBox: "0 0 12 12",
-                                  width: 12,
-                                  height: 12,
-                                  "aria-hidden": "true",
-                                  children: e.jsx("path", {
-                                    d: "M3 9L9 3M4 3H9V8",
+              e.jsx("div", {
+                className: `fixed inset-0 z-[998] bg-black/60 backdrop-blur-xs transition-opacity duration-300 ${
+                  B ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                }`,
+                onClick: () => J(false),
+                "aria-hidden": "true",
+              }),
+              e.jsxs("aside", {
+                id: S + "-menu",
+                "aria-label": "Thanh điều hướng WIVI",
+                className: `fixed top-0 left-0 bottom-0 w-[300px] sm:w-[320px] max-w-[85vw] bg-[#071322] border-r border-sky-900/50 shadow-2xl z-[999] flex flex-col justify-between p-5 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  B ? "translate-x-0" : "-translate-x-full"
+                }`,
+                children: [
+                  e.jsxs("div", {
+                    children: [
+                      e.jsxs("div", {
+                        className: "flex items-center justify-between pb-4 border-b border-sky-900/40",
+                        children: [
+                          e.jsxs("div", {
+                            className: "flex items-center gap-2.5",
+                            children: [
+                              e.jsx("img", {
+                                src: "/wivi-logo.png",
+                                alt: "WIVI",
+                                className: "h-8 w-8 rounded-lg object-contain bg-sky-950 p-1 border border-sky-800/40",
+                              }),
+                              e.jsx("span", {
+                                className: "font-bold text-white text-base tracking-wider",
+                                children: "WIVI",
+                              }),
+                            ],
+                          }),
+                          e.jsx("button", {
+                            type: "button",
+                            onClick: () => J(false),
+                            className: "w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 hover:bg-sky-500 hover:text-white flex items-center justify-center transition-all cursor-pointer",
+                            "aria-label": "Đóng menu",
+                            children: e.jsx("svg", {
+                              width: 14,
+                              height: 14,
+                              viewBox: "0 0 14 14",
+                              fill: "none",
+                              stroke: "currentColor",
+                              strokeWidth: "2.2",
+                              strokeLinecap: "round",
+                              children: e.jsx("path", { d: "M2 2L12 12M12 2L2 12" }),
+                            }),
+                          }),
+                        ],
+                      }),
+                      e.jsx("ul", {
+                        className: "flex flex-col gap-1 py-4 overflow-y-auto max-h-[calc(100vh-180px)]",
+                        children: t.map((l, f) =>
+                          e.jsx(
+                            "li",
+                            {
+                              children: e.jsxs("a", {
+                                href: l.href || "#",
+                                onClick: (h) => {
+                                  D(l.href, h);
+                                  J(false);
+                                },
+                                className: "flex items-center justify-between px-3.5 py-3 rounded-xl text-white hover:text-white bg-slate-900/60 hover:bg-sky-500/25 active:bg-sky-500/40 transition-all group font-bold text-[16px] tracking-wide border border-sky-900/50 hover:border-sky-400/50 shadow-sm",
+                                children: [
+                                  e.jsxs("div", {
+                                    className: "flex items-center gap-3",
+                                    children: [
+                                      e.jsxs("span", {
+                                        className: "font-mono text-xs text-sky-300 font-bold bg-sky-950/90 px-2 py-0.5 rounded border border-sky-400/30",
+                                        children: ["0", f + 1],
+                                      }),
+                                      e.jsx("span", {
+                                        className: "text-white font-bold group-hover:translate-x-1.5 transition-transform",
+                                        children: l.label,
+                                      }),
+                                    ],
+                                  }),
+                                  e.jsx("svg", {
+                                    className: "w-4 h-4 text-sky-300 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all",
+                                    viewBox: "0 0 12 12",
                                     fill: "none",
                                     stroke: "currentColor",
-                                    strokeWidth: "1.3",
-                                    strokeLinecap: "round",
+                                    strokeWidth: "2",
+                                    children: e.jsx("path", {
+                                      d: "M3 9L9 3M4 3H9V8",
+                                      strokeLinecap: "round",
+                                    }),
                                   }),
-                                }),
-                              ],
-                            }),
-                          },
-                          l.label,
+                                ],
+                              }),
+                            },
+                            l.label,
+                          ),
                         ),
-                      ),
-                    }),
-                    e.jsxs("div", {
-                      className: "mfl-dd-foot",
-                      children: [
-                        e.jsx("span", { className: "mfl-live" }),
-                        "All systems normal",
-                      ],
-                    }),
-                  ],
+                      }),
+                    ],
+                  }),
+                  e.jsxs("div", {
+                    className: "pt-4 border-t border-sky-900/40 flex items-center justify-between text-xs text-slate-200 font-mono font-semibold",
+                    children: [
+                      e.jsxs("div", {
+                        className: "flex items-center gap-2",
+                        children: [
+                          e.jsx("span", { className: "w-2 h-2 rounded-full bg-emerald-400 animate-pulse" }),
+                          e.jsx("span", { className: "text-white font-medium", children: "All systems normal" }),
+                        ],
+                      }),
+                      e.jsx("span", {
+                        className: "text-[11px] text-sky-300 font-bold",
+                        children: "v2.4",
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+              sp &&
+                sp.length > 0 &&
+                e.jsx("div", {
+                  className: "mfl-social-proof mfl-in flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mt-4 text-[12px] sm:text-[13px] text-sky-200/90 font-medium",
+                  style: { animationDelay: "420ms" },
+                  children: sp.map((item, idx) =>
+                    e.jsxs(
+                      "span",
+                      {
+                        className:
+                          "inline-flex items-center gap-1.5 bg-sky-950/40 border border-sky-400/20 px-3 py-1 rounded-full backdrop-blur-xs",
+                        children: [
+                          e.jsx("span", {
+                            className: "text-emerald-400 font-bold",
+                            children: "✓",
+                          }),
+                          item,
+                        ],
+                      },
+                      idx,
+                    ),
+                  ),
                 }),
             ],
           }),
@@ -2193,155 +2283,15 @@ Management`,
           }),
         ],
       }),
-      e.jsxs("header", {
+      e.jsx("header", {
         ref: ne,
-        className: "mfl-hero",
-        style: { minHeight: "max(700px, calc(" + H + " - 14px))" },
-        onPointerMove: Be,
-        onPointerLeave: We,
-        children: [
-          e.jsx("div", {
-            className: "mfl-circuit-wrap",
-            ref: oe,
-            children: e.jsx(ct, { uid: S, reduced: L, hot: de }),
-          }),
-          e.jsx("button", {
-            type: "button",
-            className: "mfl-float-tile",
-            "aria-label": "Send a signal to the device",
-            onClick: ue,
-            children: e.jsx("span", {
-              style: { transform: "rotate(" + Me * 60 + "deg)" },
-              children: e.jsx(R, { size: 20, color: z.ink }),
-            }),
-          }),
-          e.jsxs("div", {
-            className: "mfl-hero-head",
-            children: [
-              n &&
-                e.jsxs("p", {
-                  className: "mfl-backer mfl-in",
-                  style: { animationDelay: "60ms" },
-                  children: [
-                    n.prefix ?? "Backed by",
-                    e.jsx("span", {
-                      className: "mfl-backer-mark",
-                      "aria-hidden": "true",
-                      children: n.mark ?? n.name.slice(0, 1),
-                    }),
-                    e.jsx("b", { children: n.name }),
-                  ],
-                }),
-              e.jsx("h1", { className: "mfl-h1", children: V(d, "mfl-in") }),
-              o &&
-                e.jsx("p", {
-                  className: "mfl-sub mfl-in",
-                  style: { animationDelay: "260ms" },
-                  children: o,
-                }),
-              e.jsxs("div", {
-                className: "mfl-cta-row mfl-in",
-                style: { animationDelay: "340ms" },
-                children: [
-                  e.jsx("a", {
-                    className: "mfl-btn mfl-btn--brand",
-                    href: x.href || "#",
-                    onClick: (l) => D(x.href, l),
-                    children: x.label,
-                  }),
-                  y.href
-                    ? e.jsx("a", {
-                        className: "mfl-btn mfl-btn--white",
-                        href: y.href,
-                        onClick: (l) => D(y.href, l),
-                        children: y.label,
-                      })
-                    : e.jsx("button", {
-                        type: "button",
-                        className: "mfl-btn mfl-btn--white",
-                        onClick: () => Z(!0),
-                        children: y.label,
-                      }),
-                ],
-              }),
-            ],
-          }),
-          e.jsxs("div", {
-            className: "mfl-stage",
-            children: [
-              e.jsxs(
-                "div",
-                {
-                  className: "mfl-rings",
-                  "aria-hidden": "true",
-                  children: [e.jsx("i", {}), e.jsx("i", {}), e.jsx("i", {})],
-                },
-                q,
-              ),
-              e.jsxs("div", {
-                className: "mfl-device",
-                ref: Y,
-                children: [
-                  customModel
-                    ? customModel
-                    : e.jsx("button", {
-                        type: "button",
-                        className: "mfl-device-btn",
-                        "aria-label": "Press the device",
-                        onClick: ue,
-                        children: e.jsx("span", {
-                          className: "mfl-device-float",
-                          children: e.jsx(mt, { uid: S, pulse: q }),
-                        }),
-                      }),
-                  !customModel &&
-                    e.jsx("span", {
-                      className: "mfl-device-shadow",
-                      "aria-hidden": "true",
-                    }),
-                  !customModel &&
-                    e.jsxs("span", {
-                      className: "mfl-callout",
-                      "aria-hidden": "true",
-                      children: [
-                        e.jsx("span", { className: "mfl-live" }),
-                        q ? "Synced just now" : "Auto-sync · live",
-                      ],
-                    }),
-                ],
-              }),
-              e.jsxs("div", {
-                className: "mfl-hero-foot",
-                children: [
-                  u &&
-                    e.jsxs("div", {
-                      className: "mfl-info mfl-in",
-                      style: { animationDelay: "480ms" },
-                      children: [
-                        u.label &&
-                          e.jsxs("p", {
-                            className: "mfl-info-k",
-                            children: [e.jsx(R, { size: 10 }), " ", u.label],
-                          }),
-                        e.jsx("p", {
-                          className: "mfl-info-t",
-                          children: V(u.text),
-                        }),
-                      ],
-                    }),
-                  N.length > 0 &&
-                    e.jsx("div", {
-                      className: "mfl-cards mfl-in",
-                      style: { animationDelay: "560ms" },
-                      children: N.slice(0, 2).map((l, f) =>
-                        e.jsx(pt, { card: l }, l.title + f),
-                      ),
-                    }),
-                ],
-              }),
-            ],
-          }),
-        ],
+        id: "hero",
+        className: "relative w-full h-[100dvh] min-h-[100dvh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#f2f8f2] via-[#eef7ee] to-[#e4f3ea] border-b border-sky-900/30",
+        children: e.jsx("img", {
+          src: "/assets/about-me/tinhnang.png",
+          alt: "WIVI - Smart Money For Smart Generation",
+          className: "w-full h-full object-contain object-center select-none p-2 sm:p-4 max-h-[100dvh]",
+        }),
       }),
       e.jsxs("main", {
         className: "mfl-night",
@@ -2719,8 +2669,8 @@ const gt = `
 .mfl-root[data-scrolled] .mfl-nav{padding-top:8px}
 .mfl-root[data-scrolled] .mfl-nav::before{opacity:1}
 .mfl-root[data-scrolled] .mfl-logo-pill,.mfl-root[data-scrolled] .mfl-nav-r .mfl-btn{box-shadow:0 10px 30px -12px rgba(0,0,0,.45)}
-.mfl-logo-pill{display:flex;align-items:center;gap:20px;height:38px;padding:0 4px 0 10px;border-radius:5px;background:color-mix(in srgb,var(--mfl-paper) 70%,#c9c2b4);backdrop-filter:blur(8px);transition:box-shadow .3s}
-.mfl-logo{display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:600;letter-spacing:-.03em;color:var(--mfl-ink)}
+.mfl-logo-pill{display:inline-flex;width:fit-content;max-width:max-content;align-items:center;gap:12px;height:38px;padding:0 6px 0 10px;border-radius:8px;background:rgba(9,23,38,.9);border:1px solid rgba(56,189,248,.25);backdrop-filter:blur(10px);box-shadow:0 8px 24px -6px rgba(0,0,0,.5);transition:box-shadow .3s}
+.mfl-logo{display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:600;letter-spacing:-.03em;color:#ffffff}
 .mfl-logo-mark{display:grid;place-items:center;width:20px;height:20px;border-radius:5px;background:var(--mfl-ink)}
 .mfl-dot{color:var(--mfl-brand)}
 .mfl-burger{position:relative;width:30px;height:30px;border-radius:3px;background:var(--mfl-brand);display:grid;place-items:center;transition:background-color .2s}
@@ -2740,7 +2690,8 @@ const gt = `
 .mfl-live{width:6px;height:6px;border-radius:50%;background:#7bd389;box-shadow:0 0 0 0 rgba(123,211,137,.6);animation:mfl-ping 2s infinite}
 
 /* ---- hero ---- */
-.mfl-hero{position:relative;display:flex;flex-direction:column;background:var(--mfl-paper);border-radius:4px 4px 0 0;overflow:hidden;isolation:isolate}
+.mfl-hero{position:relative;display:flex;flex-direction:column;justify-content:space-between;background:var(--mfl-paper);border-radius:4px 4px 0 0;overflow:hidden;isolation:isolate}
+.mfl-hero-tinhnang-bg{position:absolute;inset:0;background-image:url('/assets/about-me/tinhnang.png');background-size:cover;background-position:center;opacity:.14;mix-blend-mode:luminosity;filter:blur(0.5px);pointer-events:none;z-index:0}
 .mfl-circuit-wrap{position:absolute;inset:0;z-index:0;pointer-events:none}
 .mfl-circuit{position:absolute;inset:0;width:100%;height:100%}
 .mfl-trace{fill:none;stroke:var(--mfl-ink);stroke-opacity:.13;stroke-width:1.4}
@@ -2752,20 +2703,20 @@ const gt = `
 .mfl-float-tile{position:absolute;z-index:3;top:34%;right:14%;width:46px;height:46px;display:grid;place-items:center;border-radius:9px;background:linear-gradient(180deg,#fff,#f1ede6);box-shadow:0 1px 0 #fff inset,0 14px 30px -12px rgba(40,20,10,.45),0 0 0 1px rgba(0,0,0,.04);animation:mfl-bob 5s ease-in-out infinite}
 .mfl-float-tile span{display:block;transition:transform .6s cubic-bezier(.3,1.6,.4,1)}
 .mfl-float-tile:hover{box-shadow:0 1px 0 #fff inset,0 18px 34px -12px rgba(40,20,10,.55),0 0 0 1px color-mix(in srgb,var(--mfl-brand) 40%,transparent)}
-.mfl-hero-head{position:relative;z-index:20;pointer-events:auto;display:flex;flex-direction:column;align-items:center;text-align:center;padding:76px 20px 0}
-.mfl-backer{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--mfl-ink);margin-bottom:22px}
+.mfl-hero-head{position:relative;z-index:20;pointer-events:auto;display:flex;flex-direction:column;align-items:center;text-align:center;padding:44px 20px 0}
+.mfl-backer{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--mfl-ink);margin-bottom:14px}
 .mfl-backer b{font-weight:500}
 .mfl-backer-mark{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:2px;background:#f26522;color:#fff;font-size:10px;font-weight:700;margin-left:2px}
-.mfl-h1{font-size:clamp(42px,6.2vw,92px);line-height:.98;font-weight:400;letter-spacing:-.055em;color:var(--mfl-ink)}
+.mfl-h1{font-size:clamp(28px,3.8vw,52px);line-height:1.12;font-weight:600;letter-spacing:-.03em;color:var(--mfl-ink)}
 .mfl-line{display:block}
 .mfl-mute{color:var(--mfl-muted)}
 .mfl-h1 .mfl-line:nth-child(1){animation-delay:120ms}
 .mfl-h1 .mfl-line:nth-child(2){animation-delay:190ms}
-.mfl-sub{max-width:300px;margin-top:22px;font-size:14px;line-height:1.45;color:var(--mfl-muted)}
-.mfl-cta-row{position:relative;z-index:25;pointer-events:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px;margin-bottom:24px}
+.mfl-sub{max-width:640px;margin-top:10px;font-size:13px;line-height:1.45;color:var(--mfl-muted)}
+.mfl-cta-row{position:relative;z-index:25;pointer-events:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:14px;margin-bottom:12px}
 .mfl-in{animation:mfl-rise .9s cubic-bezier(.2,.8,.2,1) backwards}
-.mfl-stage{position:relative;flex:1;min-height:480px;display:flex;flex-direction:column;justify-content:flex-end;pointer-events:none}
-.mfl-device{position:absolute;z-index:5;left:50%;bottom:-16px;width:clamp(350px,38vw,500px);height:clamp(350px,38vw,500px);transform:translateX(-50%);perspective:900px;--mfl-rx:0deg;--mfl-ry:0deg;pointer-events:auto}
+.mfl-stage{position:relative;flex:1;min-height:0;max-height:360px;display:flex;flex-direction:column;justify-content:center;align-items:center;pointer-events:none}
+.mfl-device{position:relative;z-index:5;left:auto;bottom:auto;transform:none;width:clamp(280px,36vw,440px);height:auto;max-height:320px;pointer-events:auto;display:flex;align-items:center;justify-content:center}
 .mfl-device-btn{display:block;width:100%;height:100%;border-radius:40%;transform:rotateX(var(--mfl-rx)) rotateY(var(--mfl-ry));transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .mfl-device-btn:active{transform:rotateX(var(--mfl-rx)) rotateY(var(--mfl-ry)) scale(.96)}
 .mfl-device-float{display:block;width:100%;height:100%;animation:mfl-float 6s ease-in-out infinite,mfl-drop 1.1s cubic-bezier(.2,.8,.2,1) .2s backwards}
@@ -2777,17 +2728,17 @@ const gt = `
 .mfl-rings i{position:absolute;left:-160px;top:-160px;width:320px;height:320px;border-radius:50%;border:1px solid color-mix(in srgb,var(--mfl-brand) 45%,transparent);opacity:0;animation:mfl-ring 1.8s cubic-bezier(.2,.8,.2,1)}
 .mfl-rings i:nth-child(2){animation-delay:.18s}
 .mfl-rings i:nth-child(3){animation-delay:.36s}
-.mfl-hero-foot{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding:0 20px 20px}
+.mfl-hero-foot{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;padding:0 24px 14px}
 .mfl-hero-foot{pointer-events:none}
 .mfl-hero-foot>*{pointer-events:auto}
 .mfl-info{max-width:380px}
-.mfl-info-k{display:flex;align-items:center;gap:6px;font-size:11px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mfl-muted);margin-bottom:12px}
-.mfl-info-t{font-size:clamp(17px,1.55vw,22px);line-height:1.18;letter-spacing:-.025em;color:var(--mfl-ink)}
+.mfl-info-k{display:flex;align-items:center;gap:6px;font-size:11px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mfl-muted);margin-bottom:8px}
+.mfl-info-t{font-size:clamp(14px,1.25vw,18px);line-height:1.24;letter-spacing:-.02em;color:var(--mfl-ink)}
 .mfl-info-t .mfl-line{display:inline}
 .mfl-cards{display:flex;gap:8px}
 
 /* ---- hero stat cards ---- */
-.mfl-stat{width:272px;padding:12px;border-radius:6px;background:var(--mfl-card);color:var(--mfl-cream);box-shadow:0 30px 50px -28px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.06);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.mfl-stat{width:250px;padding:10px;border-radius:8px;background:var(--mfl-card);color:var(--mfl-cream);box-shadow:0 30px 50px -28px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.06);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .mfl-stat:hover{transform:translateY(-4px)}
 .mfl-stat-top{display:flex;justify-content:space-between;gap:8px}
 .mfl-stat-t{font-size:12px;font-weight:500;letter-spacing:-.01em}

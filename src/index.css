@@ -163,4 +163,19 @@ body {
   mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
 }
 
+@keyframes carousel-progress {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.animate-carousel-progress {
+  transform-origin: left;
+  animation: carousel-progress 4500ms linear forwards;
+  will-change: transform;
+}
+
 
