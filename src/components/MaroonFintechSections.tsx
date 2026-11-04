@@ -1,18 +1,11 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
 import {
-  Check,
   ChevronDown,
   Sparkles,
   ArrowRight,
   Quote,
-  Star,
   CheckCircle2,
-  ShieldCheck,
-  Zap,
   HelpCircle,
-  TrendingUp,
-  Clock,
-  Award,
 } from "lucide-react";
 
 // Format currency VND chuẩn Việt Nam

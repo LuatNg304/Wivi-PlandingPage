@@ -210,10 +210,10 @@ export const HowItWorksSection: React.FC = () => {
                 <button
                   onClick={() => handleStepChange(Math.max(0, activeStep - 1))}
                   disabled={activeStep === 0}
-                  className="px-4 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:pointer-events-none transition flex items-center gap-2 cursor-pointer active:scale-95"
+                  className="px-3 sm:px-4 py-2 whitespace-nowrap rounded-xl text-xs font-bold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:pointer-events-none transition flex items-center gap-2 cursor-pointer active:scale-95"
                 >
                   <ArrowLeft className="w-4 h-4" />
-                  <span>Bước trước</span>
+                  <span className="sm:hidden">Trước</span><span className="hidden sm:inline">Bước trước</span>
                 </button>
 
                 {/* Step indicator dots */}
@@ -233,15 +233,15 @@ export const HowItWorksSection: React.FC = () => {
                 {activeStep < steps.length - 1 ? (
                   <button
                     onClick={() => handleStepChange(activeStep + 1)}
-                    className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-[#0284c7] hover:bg-[#0369a1] shadow-md shadow-sky-500/25 transition flex items-center gap-2 cursor-pointer active:scale-95"
+                    className="px-4 sm:px-5 py-2.5 whitespace-nowrap rounded-xl text-xs sm:text-sm font-bold text-white bg-[#0284c7] hover:bg-[#0369a1] shadow-md shadow-sky-500/25 transition flex items-center gap-2 cursor-pointer active:scale-95"
                   >
-                    <span>Bước tiếp theo</span>
+                    <span className="sm:hidden">Tiếp theo</span><span className="hidden sm:inline">Bước tiếp theo</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 ) : (
                   <a
                     href="#download"
-                    className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-600/25 transition flex items-center gap-2 active:scale-95"
+                    className="px-4 sm:px-5 py-2.5 whitespace-nowrap rounded-xl text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-600/25 transition flex items-center gap-2 active:scale-95"
                   >
                     <span>Bắt đầu trải nghiệm</span>
                     <ArrowRight className="w-4 h-4" />
