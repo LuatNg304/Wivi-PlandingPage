@@ -1787,6 +1787,7 @@ function vt({
   logo: r,
   nav: t = Ye,
   login: s = null,
+  navActions,
   signup: i = { label: "Sign up", href: "#" },
   backer: n = { prefix: "Backed by", name: "Orbit Ventures", mark: "O" },
   title: d = `Smarter *Financial*
@@ -2265,6 +2266,7 @@ Management`,
           e.jsxs("div", {
             className: "mfl-nav-r",
             children: [
+              navActions,
               s &&
                 e.jsx("a", {
                   className: "mfl-btn mfl-btn--brand mfl-btn--sm",
@@ -2943,8 +2945,7 @@ const gt = `
 @media (max-width:640px){
 .mfl-root{padding:0}
 .mfl-nav{padding:8px 12px 0}
-.mfl-nav-r .mfl-btn--brand{display:none}
-.mfl-nav-r .mfl-btn--white{height:36px;padding:0 14px;font-size:12.5px}
+.mfl-nav-r .mfl-btn--brand,.mfl-nav-r .mfl-btn--white{height:36px;padding:0 14px;font-size:12.5px}
 .mfl-dropdown{max-width:calc(100vw - 24px);left:0;right:auto}
 .mfl-dropdown a{padding:10px 12px;font-size:17px;min-height:44px}
 .mfl-hero{border-radius:0}

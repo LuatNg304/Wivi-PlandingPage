@@ -259,6 +259,7 @@ export const MaroonPricingSection: React.FC = () => {
         "Lưu trữ dữ liệu bảo mật trên thiết bị",
       ],
       btnText: "Bắt Đầu Miễn Phí",
+      href: "#download",
       btnClass: "bg-slate-100 hover:bg-slate-200 border border-slate-200",
       btnStyle: { color: "#1e293b", backgroundColor: "#f1f5f9" },
     },
@@ -278,6 +279,7 @@ export const MaroonPricingSection: React.FC = () => {
         "Đồng bộ Cloud đa thiết bị (iOS, Android, Web)",
       ],
       btnText: "Chọn Gói Premium",
+      href: "#mua-goi",
       btnClass: "bg-white hover:bg-sky-50 font-black shadow-md",
       btnStyle: { color: "#0284c7", backgroundColor: "#ffffff" },
     },
@@ -297,6 +299,8 @@ export const MaroonPricingSection: React.FC = () => {
         "Hỗ trợ ưu tiên 1:1 từ chuyên gia tài chính",
       ],
       btnText: "Dùng thử Pro 14 ngày",
+      // Cố ý: hệ thống chỉ bán gói 29.000đ nên thẻ này cũng mua gói đó.
+      href: "#mua-goi",
       btnClass: "bg-slate-900 hover:bg-slate-800 font-bold shadow-sm",
       btnStyle: { color: "#ffffff", backgroundColor: "#0f172a" },
     },
@@ -384,7 +388,7 @@ export const MaroonPricingSection: React.FC = () => {
                   </div>
 
                   <a
-                    href="#download"
+                    href={p.href}
                     style={p.btnStyle}
                     className={`mt-6 sm:mt-8 w-full py-3.5 rounded-xl text-center text-xs sm:text-sm font-black transition-all duration-200 block cursor-pointer hover:scale-[1.02] active:scale-[0.98] ${p.btnClass}`}
                   >
@@ -430,7 +434,7 @@ export const MaroonPricingSection: React.FC = () => {
                   </div>
 
                   <a
-                    href="#download"
+                    href={p.href}
                     style={p.btnStyle}
                     className={`mt-6 sm:mt-8 w-full py-3.5 rounded-xl text-center text-xs sm:text-sm font-bold transition-all duration-200 block cursor-pointer hover:scale-[1.02] active:scale-[0.98] ${p.btnClass}`}
                   >
