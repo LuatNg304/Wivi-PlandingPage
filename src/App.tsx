@@ -9,8 +9,14 @@ import { AboutMissionSection } from "./components/AboutMissionSection";
 import { BreakthroughFeaturesSection } from "./components/BreakthroughFeaturesSection";
 import { AppScreensCarousel } from "./components/AppScreensCarousel";
 import { HowItWorksSection } from "./components/HowItWorksSection";
+import { AuthDialog } from "./components/AuthDialog";
+import { CheckoutDialog } from "./components/CheckoutDialog";
+import { UserMenu } from "./components/UserMenu";
+import { useAppSelector } from "./store";
+import { selectUser } from "./store/authSlice";
 
 export function App() {
+  const user = useAppSelector(selectUser);
   const [isMobile, setIsMobile] = React.useState(false);
   React.useEffect(() => {
     const handleResize = () => {
@@ -115,7 +121,8 @@ export function App() {
           { label: "Hỏi Đáp", href: "#faq" },
           { label: "Tải App", href: "#download" },
         ]}
-        //login={{ label: "Đăng Nhập sss", href: "#download" }}
+        login={user ? null : { label: "Đăng Ký", href: "#dang-ky" }}
+        navActions={user ? <UserMenu /> : null}
         signup={{ label: "Tải App", href: "#download" }}
         cta={{
           title: "Tự do tài chính không bắt đầu từ việc bạn kiếm được bao nhiêu tiền,\n*mà bắt đầu từ khoảnh khắc* bạn quyết định làm chủ số tiền mình có.",
@@ -206,6 +213,8 @@ export function App() {
           </div>
         </div>
       </MaroonFintechBase>
+      <AuthDialog />
+      <CheckoutDialog />
     </div>
   );
 }
