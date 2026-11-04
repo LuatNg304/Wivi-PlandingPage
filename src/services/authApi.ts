@@ -1,5 +1,6 @@
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://160.30.161.213:3000";
+// Mặc định gọi /api cùng domain: Vercel (vercel.json) và Vite (vite.config.ts)
+// chuyển tiếp sang backend HTTP, vì trang HTTPS không được gọi thẳng tới HTTP.
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
 const REQUEST_TIMEOUT_MS = 15000;
 
 export class ApiError extends Error {
