@@ -1690,7 +1690,7 @@ function ut({ open: a, onClose: r, brand: t, onRequestDemo: s }) {
               children: [
                 e.jsxs("p", {
                   className: "mfl-badge mfl-badge--light",
-                  children: [e.jsx(R, { size: 10 }), " Request demo"],
+                  children: [e.jsx(R, { size: 10 }), " Đặt lịch demo"],
                 }),
                 e.jsxs("h2", {
                   id: "mfl-dialog-h",
@@ -1795,7 +1795,7 @@ Management`,
   subtitle:
     o = "Gain complete and confident control over each of your valuable assets with ease.",
   primaryAction: x = { label: "Get started", href: "#contact" },
-  secondaryAction: y = { label: "Request demo" },
+  secondaryAction: y = { label: "Đặt lịch demo" },
   socialProof: sp = [],
   info: u = {
     label: "/info/",
@@ -2288,11 +2288,11 @@ Management`,
       e.jsx("header", {
         ref: ne,
         id: "hero",
-        className: "relative w-full h-[100dvh] min-h-[100dvh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#f2f8f2] via-[#eef7ee] to-[#e4f3ea] border-b border-sky-900/30",
+        className: "relative w-full pt-16 pb-6 md:pt-0 md:pb-0 md:h-[100dvh] md:min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#f2f8f2] via-[#eef7ee] to-[#e4f3ea] border-b border-sky-900/30",
         children: e.jsx("img", {
           src: "/assets/about-me/tinhnang.png",
           alt: "WIVI - Smart Money For Smart Generation",
-          className: "w-full h-full object-contain object-center select-none p-2 sm:p-4 max-h-[100dvh]",
+          className: "w-full h-auto md:h-full object-contain object-center select-none px-2 sm:p-4 md:max-h-[100dvh] rounded-xl md:rounded-none",
         }),
       }),
       e.jsxs("main", {
@@ -2526,7 +2526,7 @@ Management`,
                       type: "button",
                       className: "mfl-btn mfl-btn--ghost",
                       onClick: () => Z(!0),
-                      children: "Request demo",
+                      children: "Đặt lịch demo",
                     }),
                   ],
                 }),
@@ -2639,11 +2639,13 @@ Management`,
 }
 const gt = `
 .mfl-root{position:relative;background:var(--mfl-frame);color:var(--mfl-ink);padding:14px 14px 0;overflow-x:clip;font-family:"Inter Tight","Inter","Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-height:1.4;font-feature-settings:"ss01","cv11"}
+@layer base{
 .mfl-root :where(button){font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;text-align:inherit}
 .mfl-root :where(a){color:inherit;text-decoration:none}
 .mfl-root :where(p,h1,h2,h3,ul){margin:0;padding:0}
 .mfl-root :where(ul){list-style:none}
 .mfl-root :where(input,select){font:inherit;color:inherit}
+}
 .mfl-root :where(button,a,input,select,[tabindex]):focus-visible{outline:2px solid var(--mfl-glow);outline-offset:2px;border-radius:6px}
 .mfl-svg{display:block;max-width:none;flex:none}
 
