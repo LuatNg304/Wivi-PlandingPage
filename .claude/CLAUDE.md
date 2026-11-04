@@ -51,7 +51,7 @@ The global `box-shadow: none !important` rule in `src/index.css` disables `ring-
 
 ### Authentication
 
-`AuthDialog` is rendered in `App.tsx` and handles login, registration and password reset. It opens on the URL hash `#dang-ky` or `#dang-nhap`; the nav's Đăng Ký button comes through the shell's `login` prop. API calls live in `src/services/authApi.ts`, and `VITE_API_BASE_URL` overrides the default backend URL.
+`AuthDialog` is rendered in `App.tsx` and handles login, registration and password reset. It opens on the URL hash `#dang-ky` or `#dang-nhap`; the nav's Đăng Ký button comes through the shell's `login` prop. API calls live in `src/services/authApi.ts` and go to same-origin `/api/...` by default. The site is hosted on Vercel, which forces HTTPS, while the backend is plain HTTP at `160.30.161.213:3000`, so `vercel.json` rewrites `/api/*` to the backend and `vite.config.ts` does the same for `dev` and `preview`. Set `VITE_API_BASE_URL` only to call a backend directly, for example once it has HTTPS. Because of the proxy, the backend sees Vercel's IP addresses rather than visitors', which affects its per-IP rate limits.
 
 The session is in Redux (`src/store/authSlice.ts`) and is kept in `sessionStorage` by decision: it survives a reload and ends when the tab closes. Only the user and access token are stored, never the refresh token, so a session lasts at most the access token's 1 day. On page load `/user/me` validates the stored token, and a 401 clears the session. When signed in, `App.tsx` passes `UserMenu` (avatar and logout) through the shell's `navActions` prop instead of `login`.
 
